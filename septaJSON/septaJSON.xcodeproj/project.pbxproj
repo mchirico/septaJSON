@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A55535D3216788EE00489F0B /* stationTostation.json in Resources */ = {isa = PBXBuildFile; fileRef = A55535D2216788EE00489F0B /* stationTostation.json */; };
+		A55535D521678A0F00489F0B /* StationToStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55535D421678A0F00489F0B /* StationToStation.swift */; };
+		A55535D7216828EE00489F0B /* stations.csv in Resources */ = {isa = PBXBuildFile; fileRef = A55535D6216828EE00489F0B /* stations.csv */; };
+		A55535D921682A4C00489F0B /* ReadStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55535D821682A4C00489F0B /* ReadStations.swift */; };
+		A55535DB2168D8D400489F0B /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55535DA2168D8D400489F0B /* TrainView.swift */; };
+		A55535DD2168D9CD00489F0B /* trainview.json in Resources */ = {isa = PBXBuildFile; fileRef = A55535DC2168D9CD00489F0B /* trainview.json */; };
+		A55535DF216910C600489F0B /* RRSchedules.json in Resources */ = {isa = PBXBuildFile; fileRef = A55535DE216910C600489F0B /* RRSchedules.json */; };
+		A55535E1216910F100489F0B /* RRSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55535E0216910F100489F0B /* RRSchedules.swift */; };
 		A59F76732165A84800C55186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F76722165A84800C55186 /* AppDelegate.swift */; };
 		A59F76752165A84800C55186 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F76742165A84800C55186 /* ViewController.swift */; };
 		A59F76782165A84800C55186 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59F76762165A84800C55186 /* Main.storyboard */; };
@@ -39,6 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A55535D2216788EE00489F0B /* stationTostation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stationTostation.json; sourceTree = "<group>"; };
+		A55535D421678A0F00489F0B /* StationToStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationToStation.swift; sourceTree = "<group>"; };
+		A55535D6216828EE00489F0B /* stations.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = stations.csv; sourceTree = "<group>"; };
+		A55535D821682A4C00489F0B /* ReadStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStations.swift; sourceTree = "<group>"; };
+		A55535DA2168D8D400489F0B /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
+		A55535DC2168D9CD00489F0B /* trainview.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trainview.json; sourceTree = "<group>"; };
+		A55535DE216910C600489F0B /* RRSchedules.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RRSchedules.json; sourceTree = "<group>"; };
+		A55535E0216910F100489F0B /* RRSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RRSchedules.swift; sourceTree = "<group>"; };
 		A59F766F2165A84800C55186 /* septaJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = septaJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59F76722165A84800C55186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59F76742165A84800C55186 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +100,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A55535D02167881400489F0B /* JSON Parse */ = {
+			isa = PBXGroup;
+			children = (
+				A55535D6216828EE00489F0B /* stations.csv */,
+				A55535D821682A4C00489F0B /* ReadStations.swift */,
+				A55535E0216910F100489F0B /* RRSchedules.swift */,
+				A59F76A62166838800C55186 /* JsonExtract.swift */,
+				A59F76A22166391A00C55186 /* Sparse.swift */,
+				A55535DA2168D8D400489F0B /* TrainView.swift */,
+				A55535D421678A0F00489F0B /* StationToStation.swift */,
+			);
+			path = "JSON Parse";
+			sourceTree = "<group>";
+		};
+		A55535D1216788A900489F0B /* Fixtures for Testing */ = {
+			isa = PBXGroup;
+			children = (
+				A5D2E40A2166AB9D00E6B0D9 /* a.txt */,
+				A55535D2216788EE00489F0B /* stationTostation.json */,
+				A55535DE216910C600489F0B /* RRSchedules.json */,
+				A55535DC2168D9CD00489F0B /* trainview.json */,
+				A59F76A42166835F00C55186 /* depart.json */,
+			);
+			path = "Fixtures for Testing";
+			sourceTree = "<group>";
+		};
 		A59F76662165A84800C55186 = {
 			isa = PBXGroup;
 			children = (
@@ -109,13 +151,11 @@
 			children = (
 				A59F76722165A84800C55186 /* AppDelegate.swift */,
 				A59F76A02165A86000C55186 /* Request.swift */,
-				A59F76A22166391A00C55186 /* Sparse.swift */,
-				A59F76A62166838800C55186 /* JsonExtract.swift */,
+				A55535D1216788A900489F0B /* Fixtures for Testing */,
+				A55535D02167881400489F0B /* JSON Parse */,
 				A59F76742165A84800C55186 /* ViewController.swift */,
 				A59F76762165A84800C55186 /* Main.storyboard */,
-				A5D2E40A2166AB9D00E6B0D9 /* a.txt */,
 				A59F76792165A84A00C55186 /* Assets.xcassets */,
-				A59F76A42166835F00C55186 /* depart.json */,
 				A59F767B2165A84A00C55186 /* LaunchScreen.storyboard */,
 				A59F767E2165A84A00C55186 /* Info.plist */,
 			);
@@ -246,9 +286,13 @@
 			files = (
 				A5D2E40B2166AB9D00E6B0D9 /* a.txt in Resources */,
 				A59F767D2165A84A00C55186 /* LaunchScreen.storyboard in Resources */,
+				A55535DF216910C600489F0B /* RRSchedules.json in Resources */,
+				A55535D3216788EE00489F0B /* stationTostation.json in Resources */,
 				A59F767A2165A84A00C55186 /* Assets.xcassets in Resources */,
+				A55535D7216828EE00489F0B /* stations.csv in Resources */,
 				A59F76782165A84800C55186 /* Main.storyboard in Resources */,
 				A59F76A52166835F00C55186 /* depart.json in Resources */,
+				A55535DD2168D9CD00489F0B /* trainview.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,10 +318,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A59F76752165A84800C55186 /* ViewController.swift in Sources */,
+				A55535D521678A0F00489F0B /* StationToStation.swift in Sources */,
 				A59F76A32166391A00C55186 /* Sparse.swift in Sources */,
+				A55535DB2168D8D400489F0B /* TrainView.swift in Sources */,
 				A59F76A72166838800C55186 /* JsonExtract.swift in Sources */,
 				A59F76A12165A86000C55186 /* Request.swift in Sources */,
+				A55535D921682A4C00489F0B /* ReadStations.swift in Sources */,
 				A59F76732165A84800C55186 /* AppDelegate.swift in Sources */,
+				A55535E1216910F100489F0B /* RRSchedules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

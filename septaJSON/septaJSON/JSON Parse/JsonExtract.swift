@@ -8,9 +8,10 @@
 
 import Foundation
 
-class ParseDeparture {
+class JsonExtract {
   
-  
+  // MARK: This is for testing ... keep it small
+  //       See a.txt
   struct AA:Decodable {
     let A:[One]
   }
@@ -26,6 +27,7 @@ class ParseDeparture {
   }
   
   
+  // MARK: SEPTA related Structure
   struct DepartListing:Decodable {
     let depart:[Departures]
     
@@ -37,8 +39,6 @@ class ParseDeparture {
   struct Departures:Decodable {
     let Northbound:[Train]?
     let Southbound:[Train]?
-    
-    
   }
   
   
@@ -61,18 +61,17 @@ class ParseDeparture {
   }
   
   
-  private var departListing:DepartListing?
+  var departListing:DepartListing?
   private var alisting:AA?
   
   
-  func parseJSONT() {
+  
+  func parseJSONTest() {
     
     if let url = Bundle.main.url(forResource: "a", withExtension: "txt") {
       
       do {
         let data = try Data(contentsOf: url)
-        
-        
         self.alisting = try JSONDecoder().decode(AA.self, from: data)
         
         if let alisting = self.alisting {
@@ -85,21 +84,19 @@ class ParseDeparture {
   }
   
   
-  func parseJSON() {
+  func parseString(data: String) {
     
-    if let url = Bundle.main.url(forResource: "depart", withExtension: "json") {
+    do {
+      self.departListing = try JSONDecoder().decode(DepartListing.self, from: data.data(using: .utf8)!)
       
-      do {
-        let data = try Data(contentsOf: url)
-        self.departListing = try JSONDecoder().decode(DepartListing.self, from: data)
-        
-        if let departListing = self.departListing {
-          print(departListing.depart[0].Northbound?[0] ?? "none")
-        }
-      } catch {
-        print("Error:",error.localizedDescription)
+      if let departListing = self.departListing {
+        print(departListing.depart[0].Northbound?[0] ?? "none")
       }
+      
+    } catch {
+      print("Error:",error.localizedDescription)
     }
+    
   }
   
   
