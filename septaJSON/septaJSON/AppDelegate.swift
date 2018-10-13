@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  septaJSON
+//  SeptaJSON
 //
-//  Created by Michael Chirico on 10/3/18.
+//  Created by Michael Chirico on 10/13/18.
 //  Copyright © 2018 Michael Chirico. All rights reserved.
 //
 

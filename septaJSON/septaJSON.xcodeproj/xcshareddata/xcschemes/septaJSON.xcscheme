@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A59F766E2165A84800C55186"
-               BuildableName = "septaJSON.app"
-               BlueprintName = "septaJSON"
-               ReferencedContainer = "container:septaJSON.xcodeproj">
+               BlueprintIdentifier = "A5BE0B552172B3CD00186357"
+               BuildableName = "SeptaJSON.app"
+               BlueprintName = "SeptaJSON"
+               ReferencedContainer = "container:SeptaJSON.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A59F76822165A84A00C55186"
-               BuildableName = "septaJSONTests.xctest"
-               BlueprintName = "septaJSONTests"
-               ReferencedContainer = "container:septaJSON.xcodeproj">
+               BlueprintIdentifier = "A5BE0B692172B3CE00186357"
+               BuildableName = "SeptaJSONTests.xctest"
+               BlueprintName = "SeptaJSONTests"
+               ReferencedContainer = "container:SeptaJSON.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A59F768D2165A84A00C55186"
-               BuildableName = "septaJSONUITests.xctest"
-               BlueprintName = "septaJSONUITests"
-               ReferencedContainer = "container:septaJSON.xcodeproj">
+               BlueprintIdentifier = "A5BE0B742172B3CE00186357"
+               BuildableName = "SeptaJSONUITests.xctest"
+               BlueprintName = "SeptaJSONUITests"
+               ReferencedContainer = "container:SeptaJSON.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A59F766E2165A84800C55186"
-            BuildableName = "septaJSON.app"
-            BlueprintName = "septaJSON"
-            ReferencedContainer = "container:septaJSON.xcodeproj">
+            BlueprintIdentifier = "A5BE0B552172B3CD00186357"
+            BuildableName = "SeptaJSON.app"
+            BlueprintName = "SeptaJSON"
+            ReferencedContainer = "container:SeptaJSON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A59F766E2165A84800C55186"
-            BuildableName = "septaJSON.app"
-            BlueprintName = "septaJSON"
-            ReferencedContainer = "container:septaJSON.xcodeproj">
+            BlueprintIdentifier = "A5BE0B552172B3CD00186357"
+            BuildableName = "SeptaJSON.app"
+            BlueprintName = "SeptaJSON"
+            ReferencedContainer = "container:SeptaJSON.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A59F766E2165A84800C55186"
-            BuildableName = "septaJSON.app"
-            BlueprintName = "septaJSON"
-            ReferencedContainer = "container:septaJSON.xcodeproj">
+            BlueprintIdentifier = "A5BE0B552172B3CD00186357"
+            BuildableName = "SeptaJSON.app"
+            BlueprintName = "SeptaJSON"
+            ReferencedContainer = "container:SeptaJSON.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
