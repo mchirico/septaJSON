@@ -1,15 +1,15 @@
 //
-//  septaJSONTests.swift
-//  septaJSONTests
+//  SeptaJSONTests.swift
+//  SeptaJSONTests
 //
-//  Created by Michael Chirico on 10/3/18.
+//  Created by Michael Chirico on 10/13/18.
 //  Copyright © 2018 Michael Chirico. All rights reserved.
 //
 
 import XCTest
-@testable import septaJSON
+@testable import SeptaJSON
 
-class septaJSONTests: XCTestCase {
+class SeptaJSONTests: XCTestCase {
   
   override func setUp() {
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,6 +18,7 @@ class septaJSONTests: XCTestCase {
   override func tearDown() {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
+  
   
   
   func testParse() {
@@ -193,6 +194,8 @@ Did a new station get added?
     XCTAssert(r.data!.count == 154, msg)
     
   }
+  
+  
   
   
   func testExample() {

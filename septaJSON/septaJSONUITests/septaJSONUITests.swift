@@ -1,14 +1,14 @@
 //
-//  septaJSONUITests.swift
-//  septaJSONUITests
+//  SeptaJSONUITests.swift
+//  SeptaJSONUITests
 //
-//  Created by Michael Chirico on 10/3/18.
+//  Created by Michael Chirico on 10/13/18.
 //  Copyright © 2018 Michael Chirico. All rights reserved.
 //
 
 import XCTest
 
-class septaJSONUITests: XCTestCase {
+class SeptaJSONUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
