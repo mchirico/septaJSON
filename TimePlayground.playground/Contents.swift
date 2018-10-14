@@ -8,11 +8,11 @@ func secondsFromGMT() -> Int {
 }
 
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "MMMM d, yyyy, m:mm a"
+dateFormatter.dateFormat = "MMMM d, yyyy, mm:mm.SSS a"
 
 let now = Date()
 
-dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ssa"
+dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSSa"
 let stringDate = dateFormatter.string(from: now)
 
 
@@ -47,7 +47,7 @@ func LocalToUTC(dateString: String) -> String {
   return outFormat
 }
 
-
+let septaInput="11:59PM"
 
 
 let dateString = "2017-10-10 9:56:25pm"

@@ -51,6 +51,8 @@ https://www3.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elki
     if p.records!.sts.count < 3 {
       XCTFail()
     }
+    
+    print(p.records!.sts)
   }
   
   func testTrainViewGetURL() {
@@ -146,6 +148,55 @@ https://www3.septa.org/hackathon/TrainView/
   }
   
   
+  func testRecTimer() {
+    
+    if let url = Bundle.main.url(forResource: "stationTostation", withExtension: "json") {
+      
+      do {
+        let data = try Data(contentsOf: url)
+        let sdata = String(data: data, encoding: .utf8)
+        
+        let p = StationToStation()
+        p.parseString(data: sdata!)
+        
+        let train_id = p.records!.sts[0].orig_train
+        XCTAssert(train_id == "412")
+        
+        print(p.records!.sts[0].orig_departure_time)
+        
+        let r = RecTimer()
+        
+        r.stringTime(s: "8:50PM")
+        
+        // Very simple... just check we got a value
+        XCTAssert(r.ti != 0)
+        
+      } catch {
+        print("Error:",error.localizedDescription)
+        XCTFail()
+      }
+    }
+    
+  }
+  
+  
+  
+  func testStationToStationLive() {
+    let url = "https://www3.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elkins%20Park&req3=40"
+    
+    let sts = StationToStation()
+    sts.getURL(url: url)
+    sts.parseString(data: sts.urlResults)
+    
+    print(sts.records!)
+    XCTAssert(sts.records!.sts.count >= 3, "This is live data. May not work after 11pm")
+   
+    
+  }
+  
+  
+  
+  
   func testParseString() {
     //String(data: data!, encoding: .utf8)
     if let url = Bundle.main.url(forResource: "depart", withExtension: "json") {
@@ -192,6 +243,16 @@ Did a new station get added?
 
 """
     XCTAssert(r.data!.count == 154, msg)
+    
+  }
+  
+  
+  
+  func testTime() {
+    let t = TimeAdjust()
+    let s = "7:23PM"
+    
+    XCTAssert(t.timeAppend(time: s) != nil, "Time not converting")
     
   }
   
