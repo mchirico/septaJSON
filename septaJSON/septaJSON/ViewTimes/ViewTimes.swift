@@ -155,7 +155,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
     
     
-    let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: 367, height: 40))
+    let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40))
     
     bgView.backgroundColor = UIColor.green
     bgView.layer.borderWidth = 1
@@ -212,10 +212,6 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     cell!.addSubview(bgView)
     
     return cell!
-    
-    
-    
-    
     
   }
   

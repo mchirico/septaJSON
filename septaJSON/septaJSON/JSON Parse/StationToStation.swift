@@ -41,16 +41,20 @@ class Travel {
     recTimer[1].stringTime(s: (sts[1].records?.sts[0].orig_departure_time)!)
   }
   
+  
   func getMinutes() -> [Int] {
     
     var min0 = 3600
     var min1 = 3600
     
     if recTimer[0].hours == 0 {
+      recTimer[0].delay(s: (sts[0].records?.sts[0].orig_delay))
       min0 = recTimer[0].minutes
     }
     
     if recTimer[1].hours == 0 {
+      recTimer[1].delay(s: (sts[1].records?.sts[0].orig_delay))
+      print(recTimer[1].delay)
       min1 = recTimer[1].minutes
     }
     
