@@ -124,15 +124,25 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
         
         label.text = travel.msg(index: 0,row: indexPath.row)
         
-        if travel.getMinutes()[0] < 6 && indexPath.row == 0 {
-          if travel.getMinutes()[0] < 4 {
-            bgView.backgroundColor = UIColor.red
-          } else {
+        
+        if  indexPath.row == 0 {
+          switch travel.getMinutes()[0] {
+          case let x where x < 10 && x >= 8:
+            bgView.backgroundColor = UIColor.blue
+          case let x where x < 8 && x >= 6:
             bgView.backgroundColor = UIColor.green
+          case let x where x < 6 && x >= 5:
+            bgView.backgroundColor = UIColor.yellow
+          case let x where x < 5:
+            bgView.backgroundColor = UIColor.red
+          default:
+            bgView.backgroundColor = UIColor.lightGray
           }
         } else {
           bgView.backgroundColor = UIColor.lightGray
         }
+        
+        
         
         //label.text = "title: \(indexPath.row)"
         label.tag = 101
@@ -184,19 +194,23 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
     label.text = travel.msg(index: 1,row: indexPath.row)
     
-    if travel.getMinutes()[1] < 6 && indexPath.row == 0 {
-      if travel.getMinutes()[1] < 4 {
-        bgView.backgroundColor = UIColor.red
-      } else {
+    
+    if  indexPath.row == 0 {
+      switch travel.getMinutes()[1] {
+      case let x where x <= 10 && x > 8:
+        bgView.backgroundColor = UIColor.blue
+      case let x where x <= 8 && x >= 6:
         bgView.backgroundColor = UIColor.green
+      case let x where x < 6 && x >= 5:
+        bgView.backgroundColor = UIColor.yellow
+      case let x where x < 5:
+        bgView.backgroundColor = UIColor.red
+      default:
+        bgView.backgroundColor = UIColor.lightGray
       }
     } else {
       bgView.backgroundColor = UIColor.lightGray
     }
-    
-    print("\n\nWHAT\n")
-    print(travel.getMinutes()[1])
-    
     
     label.tag = 102
     label.font  = UIFont(name: "Avenir", size: 17.0)
