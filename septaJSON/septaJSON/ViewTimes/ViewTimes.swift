@@ -25,8 +25,10 @@ class ViewTimes: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    
     delegates()
     startTimer()
+    refreshData()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -58,10 +60,34 @@ class ViewTimes: UIViewController {
   @objc func refreshData() {
     
     travel.refresh()
-    tableView0.reloadData()
-    tableView1.reloadData()
     
-    print("update timer\n")
+    //  Ref: https://ru-clip.net/video/whbyVPFFh4M/contacts-animations-reload-rows-in-uitableview-ep-2.html
+    //  Ref: https://www.hackingwithswift.com/articles/80/how-to-find-and-fix-memory-leaks-using-instruments
+    
+    
+    if travel.count(index: 0) != tableView0.numberOfRows(inSection: 0) ||
+      travel.count(index: 1) != tableView1.numberOfRows(inSection: 0)
+    {
+      tableView0.reloadData()
+      tableView1.reloadData()
+      return
+      
+      
+    }
+    
+    
+    for i in 0..<travel.count(index: 0) {
+      let indexPath = IndexPath(row: i, section: 0)
+      tableView0.reloadRows(at: [indexPath], with: .left)
+    }
+    
+    for i in 0..<travel.count(index: 1) {
+      let indexPath = IndexPath(row: i, section: 0)
+      tableView1.reloadRows(at: [indexPath], with: .bottom)
+    }
+    
+    // tableView0.reloadData()
+    // tableView1.reloadData()
     
     label0.text = "\(travel.getMinutes())"
     
@@ -84,7 +110,6 @@ class ViewTimes: UIViewController {
 extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    print("\n*****\nhere\n\n\n")
     
     if tableView == tableView0 {
       return travel.count(index: 0)
@@ -124,15 +149,25 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
         
         label.text = travel.msg(index: 0,row: indexPath.row)
         
-        if travel.getMinutes()[0] < 6 && indexPath.row == 0 {
-          if travel.getMinutes()[0] < 4 {
-            bgView.backgroundColor = UIColor.red
-          } else {
+        
+        if  indexPath.row == 0 {
+          switch travel.getMinutes()[0] {
+          case let x where x < 10 && x >= 8:
+            bgView.backgroundColor = UIColor.blue
+          case let x where x < 8 && x >= 6:
             bgView.backgroundColor = UIColor.green
+          case let x where x < 6 && x >= 5:
+            bgView.backgroundColor = UIColor.yellow
+          case let x where x < 5:
+            bgView.backgroundColor = UIColor.red
+          default:
+            bgView.backgroundColor = UIColor.lightGray
           }
         } else {
           bgView.backgroundColor = UIColor.lightGray
         }
+        
+        
         
         //label.text = "title: \(indexPath.row)"
         label.tag = 101
@@ -155,7 +190,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
     
     
-    let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: 367, height: 40))
+    let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40))
     
     bgView.backgroundColor = UIColor.green
     bgView.layer.borderWidth = 1
@@ -184,19 +219,23 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
     label.text = travel.msg(index: 1,row: indexPath.row)
     
-    if travel.getMinutes()[1] < 6 && indexPath.row == 0 {
-      if travel.getMinutes()[1] < 4 {
-        bgView.backgroundColor = UIColor.red
-      } else {
+    
+    if  indexPath.row == 0 {
+      switch travel.getMinutes()[1] {
+      case let x where x <= 10 && x > 8:
+        bgView.backgroundColor = UIColor.blue
+      case let x where x <= 8 && x >= 6:
         bgView.backgroundColor = UIColor.green
+      case let x where x < 6 && x >= 5:
+        bgView.backgroundColor = UIColor.yellow
+      case let x where x < 5:
+        bgView.backgroundColor = UIColor.red
+      default:
+        bgView.backgroundColor = UIColor.lightGray
       }
     } else {
       bgView.backgroundColor = UIColor.lightGray
     }
-    
-    print("\n\nWHAT\n")
-    print(travel.getMinutes()[1])
-    
     
     label.tag = 102
     label.font  = UIFont(name: "Avenir", size: 17.0)
@@ -212,10 +251,6 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     cell!.addSubview(bgView)
     
     return cell!
-    
-    
-    
-    
     
   }
   
