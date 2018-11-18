@@ -22,9 +22,14 @@ class ViewTimes: UIViewController {
   
   var timer: Timer!
   
+  let bgVF = BgViewFactory(number: 30)
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    
+    
+    
     
     delegates()
     startTimer()
@@ -95,16 +100,6 @@ class ViewTimes: UIViewController {
   }
   
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
 }
 
 extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
@@ -129,56 +124,61 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
       
       if let cell = tableView.dequeueReusableCell(withIdentifier: "cell0") {
         
-        let bgView: UIView = UIView(frame: CGRect(x: 2, y: 0, width: cell.bounds.width - 4, height: (cell.bounds.height)-2))
+        bgVF.bgContainer0[indexPath.row].frame = CGRect(x: 2, y: 0, width: cell.bounds.width - 4, height: (cell.bounds.height)-2)
         
-        bgView.backgroundColor = UIColor.gray
-        bgView.layer.borderWidth = 3
-        bgView.alpha = 1
-        bgView.layer.cornerRadius = 9
-        bgView.tag = 100
         
-        bgView.center.x -=  view.bounds.width
+        bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.gray
+        bgVF.bgContainer0[indexPath.row].layer.borderWidth = 3
+        bgVF.bgContainer0[indexPath.row].alpha = 1
+        bgVF.bgContainer0[indexPath.row].layer.cornerRadius = 9
+        bgVF.bgContainer0[indexPath.row].tag = 100
         
-        let label = UILabel(frame: CGRect(x:0, y:10, width:200, height:15))
+        bgVF.bgContainer0[indexPath.row].center.x -=  view.bounds.width
+        
+        
+        bgVF.labelContainer0[indexPath.row].frame = CGRect(x:0, y:10, width:200, height:15)
+        
         //label.center = CGPointMake(160, 284)
-        label.textAlignment = NSTextAlignment.center
+        bgVF.labelContainer0[indexPath.row].textAlignment = NSTextAlignment.center
         
-        label.textColor = UIColor.black
-        label.backgroundColor = UIColor.clear
-        label.alpha = 10
+        bgVF.labelContainer0[indexPath.row].textColor = UIColor.black
+        bgVF.labelContainer0[indexPath.row].backgroundColor = UIColor.clear
+        bgVF.labelContainer0[indexPath.row].alpha = 10
         
-        label.text = travel.msg(index: 0,row: indexPath.row)
+        bgVF.labelContainer0[indexPath.row].text = travel.msg(index: 0,row: indexPath.row)
         
         
         if  indexPath.row == 0 {
           switch travel.getMinutes()[0] {
           case let x where x < 10 && x >= 8:
-            bgView.backgroundColor = UIColor.blue
+            bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.blue
           case let x where x < 8 && x >= 6:
-            bgView.backgroundColor = UIColor.green
+            bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.green
           case let x where x < 6 && x >= 5:
-            bgView.backgroundColor = UIColor.yellow
+            bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.yellow
           case let x where x < 5:
-            bgView.backgroundColor = UIColor.red
+            bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.red
           default:
-            bgView.backgroundColor = UIColor.lightGray
+            bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.lightGray
           }
         } else {
-          bgView.backgroundColor = UIColor.lightGray
+          bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.lightGray
         }
         
         
         
         //label.text = "title: \(indexPath.row)"
-        label.tag = 101
-        label.font  = UIFont(name: "Avenir", size: 17.0)
+        bgVF.labelContainer0[indexPath.row].tag = 101
+        bgVF.labelContainer0[indexPath.row].font  = UIFont(name: "Avenir", size: 17.0)
         
-        bgView.addSubview(label)
+       
         
-        cell.addSubview(bgView)
+        cell.addSubview(bgVF.bgContainer0[indexPath.row])
+        
+        
         
         UIView.animate(withDuration: 0.5) {
-          bgView.center.x += self.view.bounds.width
+          self.bgVF.bgContainer0[indexPath.row].center.x += self.view.bounds.width
         }
         return cell
       }
@@ -189,74 +189,75 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
     
+
+    //bgViewFactory.bgContainer1[indexPath.row]
+    //let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40))
     
-    let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40))
+    bgVF.bgContainer1[indexPath.row].frame = CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40)
     
-    bgView.backgroundColor = UIColor.green
-    bgView.layer.borderWidth = 1
-    bgView.alpha = 1
-    bgView.layer.cornerRadius = 9
+    bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.green
+    bgVF.bgContainer1[indexPath.row].layer.borderWidth = 1
+    bgVF.bgContainer1[indexPath.row].alpha = 1
+    bgVF.bgContainer1[indexPath.row].layer.cornerRadius = 9
     
-    bgView.tag = 100
+    bgVF.bgContainer1[indexPath.row].tag = 100
     
-    bgView.center.x -=  view.bounds.width
+    bgVF.bgContainer1[indexPath.row].center.x -=  view.bounds.width
     
-    let bgViewM: UIView = UIView(frame: CGRect(x: 20, y: 3.4, width: 190, height: 29))
+ 
     
-    bgViewM.backgroundColor = UIColor.white
-    bgViewM.layer.borderWidth = 1
-    bgViewM.alpha = 1
-    bgViewM.layer.cornerRadius = 9
-    bgViewM.tag = 300
+    bgVF.bgM[indexPath.row].frame = CGRect(x: 20, y: 3.4, width: 190, height: 29)
+    bgVF.bgM[indexPath.row].backgroundColor = UIColor.white
+    bgVF.bgM[indexPath.row].layer.borderWidth = 1
+    bgVF.bgM[indexPath.row].alpha = 1
+    bgVF.bgM[indexPath.row].layer.cornerRadius = 9
+    bgVF.bgM[indexPath.row].tag = 300
     
-    let label = UILabel(frame: CGRect(x:10, y:10, width:180, height:15))
+    bgVF.labelContainer1[indexPath.row].frame = CGRect(x:10, y:10, width:180, height:15)
+    bgVF.labelContainer1[indexPath.row].textAlignment = NSTextAlignment.center
     
-    label.textAlignment = NSTextAlignment.center
+    bgVF.labelContainer1[indexPath.row].textColor = UIColor.black
+    bgVF.labelContainer1[indexPath.row].backgroundColor = UIColor.clear
+    bgVF.labelContainer1[indexPath.row].alpha = 10
     
-    label.textColor = UIColor.black
-    label.backgroundColor = UIColor.clear
-    label.alpha = 10
-    
-    label.text = travel.msg(index: 1,row: indexPath.row)
+    bgVF.labelContainer1[indexPath.row].text = travel.msg(index: 1,row: indexPath.row)
     
     
     if  indexPath.row == 0 {
       switch travel.getMinutes()[1] {
       case let x where x <= 10 && x > 8:
-        bgView.backgroundColor = UIColor.blue
+        bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.blue
       case let x where x <= 8 && x >= 6:
-        bgView.backgroundColor = UIColor.green
+        bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.green
       case let x where x < 6 && x >= 5:
-        bgView.backgroundColor = UIColor.yellow
+        bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.yellow
       case let x where x < 5:
-        bgView.backgroundColor = UIColor.red
+        bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.red
       default:
-        bgView.backgroundColor = UIColor.lightGray
+        bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.lightGray
       }
     } else {
-      bgView.backgroundColor = UIColor.lightGray
+      bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.lightGray
     }
     
-    label.tag = 102
-    label.font  = UIFont(name: "Avenir", size: 17.0)
+    bgVF.labelContainer1[indexPath.row].tag = 102
+    bgVF.labelContainer1[indexPath.row].font  = UIFont(name: "Avenir", size: 17.0)
     
     
-    bgViewM.addSubview(label)
-    bgView.addSubview(bgViewM)
+ 
     
     UIView.animate(withDuration: 0.5) {
-      bgView.center.x += self.view.bounds.width
+      self.bgVF.bgContainer1[indexPath.row].center.x += self.view.bounds.width
     }
     
-    cell!.addSubview(bgView)
+    cell!.addSubview(bgVF.bgContainer1[indexPath.row])
     
     return cell!
     
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    print("seleced")
+
   }
   
   
