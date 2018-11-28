@@ -171,11 +171,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
         bgVF.labelContainer0[indexPath.row].tag = 101
         bgVF.labelContainer0[indexPath.row].font  = UIFont(name: "Avenir", size: 17.0)
         
-       
-        
         cell.addSubview(bgVF.bgContainer0[indexPath.row])
-        
-        
         
         UIView.animate(withDuration: 0.5) {
           self.bgVF.bgContainer0[indexPath.row].center.x += self.view.bounds.width

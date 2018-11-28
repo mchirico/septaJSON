@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class BgViewFactory {
   
   var bgContainer0: [UIView] = []
