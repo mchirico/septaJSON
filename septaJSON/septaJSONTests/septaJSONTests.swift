@@ -39,6 +39,19 @@ class SeptaJSONTests: XCTestCase {
     p.parseJSONTest()
   }
   
+  
+  func testFailure() {
+    let p = StationToStation()
+    
+    let url = """
+https://www4.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elkins%20Park&req3=40
+"""
+    p.getURL(url: url)
+    p.parseString(data: p.urlResults)
+    
+   
+  }
+  
   func testStationToStationGetURL() {
     let p = StationToStation()
     
@@ -246,8 +259,7 @@ Did a new station get added?
     
   }
   
-  
-  
+    
   func testTime() {
     let t = TimeAdjust()
     let s = "7:23PM"
