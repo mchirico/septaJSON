@@ -54,7 +54,6 @@ class Travel {
     
     if recTimer[1].hours == 0 {
       recTimer[1].delay(s: (sts[1].records?.sts[0].orig_delay))
-      print(recTimer[1].delay)
       min1 = recTimer[1].minutes
     }
     
@@ -129,10 +128,6 @@ class StationToStation: SeptaJSON {
     
     do {
       self.records = try JSONDecoder().decode(S2S.self, from: data.data(using: .utf8)!)
-      
-      if let records = self.records {
-        print(records.sts[0] )
-      }
       
     } catch {
       print("Error:",error.localizedDescription)

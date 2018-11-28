@@ -52,11 +52,6 @@ class TrainView: SeptaJSON {
     
     do {
       self.records = try JSONDecoder().decode(TV.self, from: data.data(using: .utf8)!)
-      
-      if let records = self.records {
-        print(records.tv[0] )
-      }
-      
     } catch {
       print("Error:",error.localizedDescription)
     }

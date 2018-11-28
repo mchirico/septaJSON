@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A58D74B021738F5C00EFFE59 /* TableViewCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74AF21738F5C00EFFE59 /* TableViewCell0.swift */; };
 		A58D74B221738F6300EFFE59 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74B121738F6300EFFE59 /* TableViewCell1.swift */; };
+		A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */; };
 		A5BE0B5A2172B3CD00186357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B592172B3CD00186357 /* AppDelegate.swift */; };
 		A5BE0B5C2172B3CD00186357 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B5B2172B3CD00186357 /* ViewController.swift */; };
 		A5BE0B5F2172B3CD00186357 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BE0B5D2172B3CD00186357 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		A58D74AF21738F5C00EFFE59 /* TableViewCell0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell0.swift; sourceTree = "<group>"; };
 		A58D74B121738F6300EFFE59 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
+		A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgViewFactory.swift; sourceTree = "<group>"; };
 		A5BE0B562172B3CD00186357 /* SeptaJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeptaJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BE0B592172B3CD00186357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5BE0B5B2172B3CD00186357 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				A5F6CD9C2172BA6300CA9AFD /* StationToStation.swift */,
 				A5F6CD9D2172BA6300CA9AFD /* TrainView.swift */,
 				A5F6CD982172BA5700CA9AFD /* stations.csv */,
+				A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */,
 			);
 			path = "JSON Parse";
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				A5BE0B5A2172B3CD00186357 /* AppDelegate.swift in Sources */,
 				A5F6CDA52172BA6300CA9AFD /* RRSchedules.swift in Sources */,
 				A5DEDA0121735B630003B98E /* TimeAdjust.swift in Sources */,
+				A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
