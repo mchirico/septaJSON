@@ -184,10 +184,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
-    
-
-    //bgViewFactory.bgContainer1[indexPath.row]
-    //let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40))
+   
     
     bgVF.bgContainer1[indexPath.row].frame = CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40)
     
