@@ -28,6 +28,12 @@ class TrainView: SeptaJSON {
     let nextstop:String
     let line:String
     let consist:String
+    let heading:Double?
+    let late:Int
+    let SOURCE:String
+    let TRACK:String
+    let TRACK_CHANGE:String
+    
   }
   
   var urlResults:String = ""
@@ -53,7 +59,7 @@ class TrainView: SeptaJSON {
     do {
       self.records = try JSONDecoder().decode(TV.self, from: data.data(using: .utf8)!)
     } catch {
-      print("Error:",error.localizedDescription)
+      print("Error (TrainView):",error.localizedDescription)
     }
     
   }

@@ -20,25 +20,75 @@ protocol SeptaJSON {
 class Travel {
   let sts = [StationToStation(),StationToStation()]
   let recTimer = [RecTimer(),RecTimer()]
+  let trainView = TrainView()
+  let stationArrival = StationArrival()
+  
+  // Currently onluy using Suburban
+  var station_url = "https://www3.septa.org/hackathon/Arrivals/Suburban%20Station/5/"
+  var trainView_url = "https://www3.septa.org/hackathon/TrainView/"
+  var url0 = "https://www3.septa.org/hackathon/NextToArrive/?req1=Elkins%20Park&req2=Suburban%20Station&req3=14"
+  var url1 = "https://www3.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elkins%20Park&req3=14"
+  
+  
+  init(trainView_url: String, url0: String, url1: String, station_url: String) {
+    self.trainView_url = trainView_url
+    self.url0 = url0
+    self.url1 = url1
+    self.station_url = station_url
+    refresh()
+  }
   
   init() {
     refresh()
   }
   
   func refresh() {
-    var url = "https://www3.septa.org/hackathon/NextToArrive/?req1=Elkins%20Park&req2=Suburban%20Station&req3=14"
     
-    sts[0].getURL(url: url)
+    stationArrival.getURL(url: station_url)
+    stationArrival.parseString(data: stationArrival.urlResults)
+    
+    trainView.getURL(url: trainView_url)
+    trainView.parseString(data: trainView.urlResults)
+    
+    sts[0].getURL(url: url0)
     sts[0].parseString(data: sts[0].urlResults)
     
     recTimer[0].stringTime(s: (sts[0].records?.sts[0].orig_departure_time)!)
     
-    url = "https://www3.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elkins%20Park&req3=14"
-    
-    sts[1].getURL(url: url)
+    sts[1].getURL(url: url1)
     sts[1].parseString(data: sts[1].urlResults)
     
     recTimer[1].stringTime(s: (sts[1].records?.sts[0].orig_departure_time)!)
+  }
+  
+  
+  func plannedTrackNorth(trainno: String) -> String {
+    if let trains_N = stationArrival.records?.sa?[0].Northbound {
+      for train in trains_N {
+        if trainno == train.train_id {
+          if let track = train.track {
+            if let platform = train.platform {
+              return "\(track)\(platform)"
+            }
+            return track
+          }
+        }
+      }
+    }
+    return ""
+  }
+  
+  
+  // This is from train view.. while arriving at station
+  func track(trainno: String,nextstop: String) -> String {
+    if let records = trainView.records {
+      for train in records.tv {
+        if trainno == train.trainno && nextstop == train.nextstop {
+          return train.TRACK
+        }
+      }
+    }
+    return ""
   }
   
   
@@ -58,7 +108,7 @@ class Travel {
     }
     
     return [min0,min1]
-
+    
   }
   
   
@@ -82,10 +132,27 @@ class Travel {
     return "No data"
   }
   
+  func msgTrack(index: Int, row: Int, nextstop: String) -> String {
+    if let depart = sts[index].records?.sts[row].orig_departure_time,
+      let train = sts[index].records?.sts[row].orig_train,
+      let delay = sts[index].records?.sts[row].orig_delay {
+      
+      
+      if row == 0 {
+        let track = self.track(trainno: train, nextstop: "Suburban Station")
+        if track != "" {
+          return "\(train): \(depart) \(delay)   \(track)"
+        }
+      }
+      
+      let track = plannedTrackNorth(trainno: train)
+      let txt = "\(train): \(depart) \(delay)   \(track)"
+      return txt
+    }
+    return "No data"
+  }
+  
 }
-
-
-
 
 
 
@@ -130,7 +197,7 @@ class StationToStation: SeptaJSON {
       self.records = try JSONDecoder().decode(S2S.self, from: data.data(using: .utf8)!)
       
     } catch {
-      print("Error:",error.localizedDescription)
+      print("Error (StationToStation):",error.localizedDescription)
     }
     
   }

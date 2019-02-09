@@ -78,7 +78,7 @@ class JsonExtract {
           print(alisting.A[1].two ?? "none")
         }
       } catch {
-        print("Error:",error.localizedDescription)
+        print("Error (JsonExtract) :",error.localizedDescription)
       }
     }
   }
@@ -94,7 +94,7 @@ class JsonExtract {
       }
       
     } catch {
-      print("Error:",error.localizedDescription)
+      print("Error (JsonExtract):",error.localizedDescription)
     }
     
   }

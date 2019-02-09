@@ -39,18 +39,19 @@ class SeptaJSONTests: XCTestCase {
     p.parseJSONTest()
   }
   
-  
-  func testFailure() {
-    let p = StationToStation()
-    
-    let url = """
-https://www4.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elkins%20Park&req3=40
-"""
-    p.getURL(url: url)
-    p.parseString(data: p.urlResults)
-    
+  // For now skip
+  /*
+   func testFailure() {
+   let p = StationToStation()
    
-  }
+   let url = """
+   https://www4.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elkins%20Park&req3=40
+   """
+   p.getURL(url: url)
+   p.parseString(data: p.urlResults)
+   
+   
+   } */
   
   func testStationToStationGetURL() {
     let p = StationToStation()
@@ -94,6 +95,7 @@ https://www3.septa.org/hackathon/TrainView/
     p.parseString(data: p.urlResults)
     
     let train_no = p.records!.tv[0].trainno
+    // let track = p.records!.tv[0].TRACK
     
     let url2 = "https://www3.septa.org/hackathon/RRSchedules/\(train_no)"
     
@@ -203,9 +205,30 @@ https://www3.septa.org/hackathon/TrainView/
     
     print(sts.records!)
     XCTAssert(sts.records!.sts.count >= 3, "This is live data. May not work after 11pm")
-   
+    
     
   }
+  
+  // Swift - How do you mock http calls?
+  // https://github.com/kylef/Mockingjay
+  func testTravel(){
+    if let url = Bundle.main.url(forResource: "trainView_url", withExtension: "url") {
+      
+      do {
+        let data = try Data(contentsOf: url)
+        let sdata = String(data: data, encoding: .utf8)
+        
+        // print("here",sdata)
+        
+      } catch {
+        print("Error:",error.localizedDescription)
+        XCTFail()
+      }
+      
+      
+    }
+  }
+  
   
   
   
@@ -259,7 +282,7 @@ Did a new station get added?
     
   }
   
-    
+  
   func testTime() {
     let t = TimeAdjust()
     let s = "7:23PM"
@@ -282,5 +305,51 @@ Did a new station get added?
       // Put the code you want to measure the time of here.
     }
   }
+  
+  
+  func testStationArrivalLiveTest(){
+    let url = "https://www3.septa.org/hackathon/Arrivals/Suburban%20Station/5/"
+    
+    let sa = StationArrival()
+    sa.getURL(url: url)
+    sa.parseString(data: sa.urlResults)
+    XCTAssert((sa.records?.sa!.count)! > 1, "No Records")
+    
+    if let trains_N = sa.records?.sa?[0].Northbound {
+      for train in trains_N {
+        print("train_id: \(train.train_id)")
+        print("train_id: \(String(describing: train.track))")
+      }
+      
+    }
+    
+    
+  }
+  
+  
+  
+  func testStationArriveWithFixture() {
+    
+    if let url = Bundle.main.url(forResource: "StationArrive", withExtension: "json") {
+      
+      do {
+        let data = try Data(contentsOf: url)
+        let sdata = String(data: data, encoding: .utf8)
+        
+        let sa = StationArrival()
+        sa.parseString(data: sdata!)
+        
+        XCTAssert((sa.records?.sa!.count)! == 2,
+                  "Need both Northbound and Southbound")
+        
+      } catch {
+        print("Error:",error.localizedDescription)
+        XCTFail()
+      }
+    }
+  }
+  
+  
+  
   
 }
