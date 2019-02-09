@@ -10,6 +10,7 @@
 		A58D74B021738F5C00EFFE59 /* TableViewCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74AF21738F5C00EFFE59 /* TableViewCell0.swift */; };
 		A58D74B221738F6300EFFE59 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74B121738F6300EFFE59 /* TableViewCell1.swift */; };
 		A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */; };
+		A598ACF521AFFCEC00EDBA07 /* bgViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */; };
 		A5BE0B5A2172B3CD00186357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B592172B3CD00186357 /* AppDelegate.swift */; };
 		A5BE0B5C2172B3CD00186357 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B5B2172B3CD00186357 /* ViewController.swift */; };
 		A5BE0B5F2172B3CD00186357 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BE0B5D2172B3CD00186357 /* Main.storyboard */; };
@@ -37,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A598ACF721AFFCEC00EDBA07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5BE0B4E2172B3CD00186357 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5BE0B552172B3CD00186357;
+			remoteInfo = SeptaJSON;
+		};
 		A5BE0B6B2172B3CE00186357 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5BE0B4E2172B3CD00186357 /* Project object */;
@@ -57,6 +65,9 @@
 		A58D74AF21738F5C00EFFE59 /* TableViewCell0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell0.swift; sourceTree = "<group>"; };
 		A58D74B121738F6300EFFE59 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
 		A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgViewFactory.swift; sourceTree = "<group>"; };
+		A598ACF221AFFCEC00EDBA07 /* bgViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bgViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bgViewTests.swift; sourceTree = "<group>"; };
+		A598ACF621AFFCEC00EDBA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5BE0B562172B3CD00186357 /* SeptaJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeptaJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BE0B592172B3CD00186357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5BE0B5B2172B3CD00186357 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +101,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A598ACEF21AFFCEC00EDBA07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5BE0B532172B3CD00186357 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,12 +142,22 @@
 			path = ViewTimes;
 			sourceTree = "<group>";
 		};
+		A598ACF321AFFCEC00EDBA07 /* bgViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */,
+				A598ACF621AFFCEC00EDBA07 /* Info.plist */,
+			);
+			path = bgViewTests;
+			sourceTree = "<group>";
+		};
 		A5BE0B4D2172B3CD00186357 = {
 			isa = PBXGroup;
 			children = (
 				A5BE0B582172B3CD00186357 /* SeptaJSON */,
 				A5BE0B6D2172B3CE00186357 /* SeptaJSONTests */,
 				A5BE0B782172B3CE00186357 /* SeptaJSONUITests */,
+				A598ACF321AFFCEC00EDBA07 /* bgViewTests */,
 				A5BE0B572172B3CD00186357 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +168,7 @@
 				A5BE0B562172B3CD00186357 /* SeptaJSON.app */,
 				A5BE0B6A2172B3CE00186357 /* SeptaJSONTests.xctest */,
 				A5BE0B752172B3CE00186357 /* SeptaJSONUITests.xctest */,
+				A598ACF221AFFCEC00EDBA07 /* bgViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +242,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A598ACF121AFFCEC00EDBA07 /* bgViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A598ACFB21AFFCEC00EDBA07 /* Build configuration list for PBXNativeTarget "bgViewTests" */;
+			buildPhases = (
+				A598ACEE21AFFCEC00EDBA07 /* Sources */,
+				A598ACEF21AFFCEC00EDBA07 /* Frameworks */,
+				A598ACF021AFFCEC00EDBA07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A598ACF821AFFCEC00EDBA07 /* PBXTargetDependency */,
+			);
+			name = bgViewTests;
+			productName = bgViewTests;
+			productReference = A598ACF221AFFCEC00EDBA07 /* bgViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A5BE0B552172B3CD00186357 /* SeptaJSON */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5BE0B7E2172B3CE00186357 /* Build configuration list for PBXNativeTarget "SeptaJSON" */;
@@ -272,10 +319,14 @@
 		A5BE0B4E2172B3CD00186357 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Michael Chirico";
 				TargetAttributes = {
+					A598ACF121AFFCEC00EDBA07 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = A5BE0B552172B3CD00186357;
+					};
 					A5BE0B552172B3CD00186357 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -305,11 +356,19 @@
 				A5BE0B552172B3CD00186357 /* SeptaJSON */,
 				A5BE0B692172B3CE00186357 /* SeptaJSONTests */,
 				A5BE0B742172B3CE00186357 /* SeptaJSONUITests */,
+				A598ACF121AFFCEC00EDBA07 /* bgViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A598ACF021AFFCEC00EDBA07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5BE0B542172B3CD00186357 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,6 +403,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A598ACEE21AFFCEC00EDBA07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A598ACF521AFFCEC00EDBA07 /* bgViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5BE0B522172B3CD00186357 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +452,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A598ACF821AFFCEC00EDBA07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5BE0B552172B3CD00186357 /* SeptaJSON */;
+			targetProxy = A598ACF721AFFCEC00EDBA07 /* PBXContainerItemProxy */;
+		};
 		A5BE0B6C2172B3CE00186357 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5BE0B552172B3CD00186357 /* SeptaJSON */;
@@ -417,6 +489,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A598ACF921AFFCEC00EDBA07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UWJCYGVG9Z;
+				INFOPLIST_FILE = bgViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cwxstat.rx.bgViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeptaJSON.app/SeptaJSON";
+			};
+			name = Debug;
+		};
+		A598ACFA21AFFCEC00EDBA07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UWJCYGVG9Z;
+				INFOPLIST_FILE = bgViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cwxstat.rx.bgViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeptaJSON.app/SeptaJSON";
+			};
+			name = Release;
+		};
 		A5BE0B7C2172B3CE00186357 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -654,6 +768,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A598ACFB21AFFCEC00EDBA07 /* Build configuration list for PBXNativeTarget "bgViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A598ACF921AFFCEC00EDBA07 /* Debug */,
+				A598ACFA21AFFCEC00EDBA07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A5BE0B512172B3CD00186357 /* Build configuration list for PBXProject "SeptaJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

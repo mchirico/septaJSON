@@ -171,11 +171,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
         bgVF.labelContainer0[indexPath.row].tag = 101
         bgVF.labelContainer0[indexPath.row].font  = UIFont(name: "Avenir", size: 17.0)
         
-       
-        
         cell.addSubview(bgVF.bgContainer0[indexPath.row])
-        
-        
         
         UIView.animate(withDuration: 0.5) {
           self.bgVF.bgContainer0[indexPath.row].center.x += self.view.bounds.width
@@ -188,10 +184,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
-    
-
-    //bgViewFactory.bgContainer1[indexPath.row]
-    //let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40))
+   
     
     bgVF.bgContainer1[indexPath.row].frame = CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40)
     
@@ -225,6 +218,8 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
     if  indexPath.row == 0 {
       switch travel.getMinutes()[1] {
+      case let x where x <= 12 && x > 10:
+        bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.magenta
       case let x where x <= 10 && x > 8:
         bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.blue
       case let x where x <= 8 && x >= 6:

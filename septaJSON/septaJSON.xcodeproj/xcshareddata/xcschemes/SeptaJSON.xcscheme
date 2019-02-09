@@ -48,6 +48,16 @@
                ReferencedContainer = "container:SeptaJSON.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A598ACF121AFFCEC00EDBA07"
+               BuildableName = "bgViewTests.xctest"
+               BlueprintName = "bgViewTests"
+               ReferencedContainer = "container:SeptaJSON.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
