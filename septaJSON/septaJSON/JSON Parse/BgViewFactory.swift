@@ -19,7 +19,7 @@ class BgViewFactory {
   
   var number = 0
   
- 
+  
   
   init(number: Int) {
     

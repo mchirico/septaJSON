@@ -45,12 +45,12 @@ class RRSchedules: SeptaJSON {
     do {
       self.records = try JSONDecoder().decode(RR.self, from: data.data(using: .utf8)!)
       
-//      if let records = self.records {
-//        print(records.rr[0] )
-//      }
+      //      if let records = self.records {
+      //        print(records.rr[0] )
+      //      }
       
     } catch {
-      print("Error:",error.localizedDescription)
+      print("Error (RRSchedules):",error.localizedDescription)
     }
     
   }

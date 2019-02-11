@@ -12,6 +12,7 @@ class Request{
   
   var contents = ""
   
+  /*
   func post(url: String, _ locationFile: String, data: Data) {
     
     let TOKEN="abc"
@@ -64,7 +65,7 @@ class Request{
     task.resume()
     
   }
-  
+  */
   
   func getURL(url: String){
     

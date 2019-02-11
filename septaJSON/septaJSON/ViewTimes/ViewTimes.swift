@@ -199,22 +199,23 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
  
     
-    bgVF.bgM[indexPath.row].frame = CGRect(x: 20, y: 3.4, width: 190, height: 29)
+    bgVF.bgM[indexPath.row].frame = CGRect(x: 20, y: 3.4, width: 290, height: 31)
     bgVF.bgM[indexPath.row].backgroundColor = UIColor.white
     bgVF.bgM[indexPath.row].layer.borderWidth = 1
     bgVF.bgM[indexPath.row].alpha = 1
     bgVF.bgM[indexPath.row].layer.cornerRadius = 9
     bgVF.bgM[indexPath.row].tag = 300
     
-    bgVF.labelContainer1[indexPath.row].frame = CGRect(x:10, y:10, width:180, height:15)
-    bgVF.labelContainer1[indexPath.row].textAlignment = NSTextAlignment.center
+    bgVF.labelContainer1[indexPath.row].frame = CGRect(x:10, y:10, width:288, height:15)
+    bgVF.labelContainer1[indexPath.row].textAlignment = NSTextAlignment.left
     
     bgVF.labelContainer1[indexPath.row].textColor = UIColor.black
     bgVF.labelContainer1[indexPath.row].backgroundColor = UIColor.clear
     bgVF.labelContainer1[indexPath.row].alpha = 10
     
-    bgVF.labelContainer1[indexPath.row].text = travel.msg(index: 1,row: indexPath.row)
-    
+//    bgVF.labelContainer1[indexPath.row].text = travel.msg(index: 1,row: indexPath.row)
+//
+     bgVF.labelContainer1[indexPath.row].text = travel.msgTrack(index: 1, row: indexPath.row, nextstop: "Suburban Station")
     
     if  indexPath.row == 0 {
       switch travel.getMinutes()[1] {

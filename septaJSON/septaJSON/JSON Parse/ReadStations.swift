@@ -28,7 +28,7 @@ class ReadStations {
         self.data = t?.components(separatedBy: "\n")
         
       } catch {
-        print("Error:",error.localizedDescription)
+        print("Error (ReadStations):",error.localizedDescription)
         
       }
       

@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/mchirico/septaJSON.svg?branch=develop)](https://travis-ci.org/mchirico/septaJSON)
-
+[![codecov](https://codecov.io/gh/mchirico/septaJSON/branch/develop/graph/badge.svg)](https://codecov.io/gh/mchirico/septaJSON)
 # septaJSON
 SEPTA JSON
 

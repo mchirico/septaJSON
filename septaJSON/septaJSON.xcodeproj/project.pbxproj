@@ -19,9 +19,15 @@
 		A5BE0B6F2172B3CE00186357 /* SeptaJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B6E2172B3CE00186357 /* SeptaJSONTests.swift */; };
 		A5BE0B7A2172B3CE00186357 /* SeptaJSONUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B792172B3CE00186357 /* SeptaJSONUITests.swift */; };
 		A5BE0B8A2172B43200186357 /* station.json in Resources */ = {isa = PBXBuildFile; fileRef = A5BE0B892172B43200186357 /* station.json */; };
+		A5D4EA3B2210FCEE0085BBAA /* url0.url in Resources */ = {isa = PBXBuildFile; fileRef = A5D4EA3A2210FCEE0085BBAA /* url0.url */; };
+		A5D4EA3D2210FD130085BBAA /* url1.url in Resources */ = {isa = PBXBuildFile; fileRef = A5D4EA3C2210FD130085BBAA /* url1.url */; };
+		A5D4EA3F2210FD730085BBAA /* trainView_url.url in Resources */ = {isa = PBXBuildFile; fileRef = A5D4EA3E2210FD730085BBAA /* trainView_url.url */; };
+		A5D4EA412211A1DC0085BBAA /* StationArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4EA402211A1DC0085BBAA /* StationArrival.swift */; };
+		A5D4EA432211A4E70085BBAA /* StationArrivalSuburban.json in Resources */ = {isa = PBXBuildFile; fileRef = A5D4EA422211A4E70085BBAA /* StationArrivalSuburban.json */; };
 		A5DEDA0121735B630003B98E /* TimeAdjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DEDA0021735B630003B98E /* TimeAdjust.swift */; };
 		A5DEDA0321738B760003B98E /* ViewTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DEDA0221738B760003B98E /* ViewTimes.swift */; };
 		A5E075762174136200052FA6 /* RecTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E075752174136200052FA6 /* RecTimer.swift */; };
+		A5EECC4222120676006C4C79 /* StationArrive.json in Resources */ = {isa = PBXBuildFile; fileRef = A5EECC4122120676006C4C79 /* StationArrive.json */; };
 		A5F6CD962172B98600CA9AFD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6CD952172B98600CA9AFD /* Request.swift */; };
 		A5F6CD992172BA5700CA9AFD /* stations.csv in Resources */ = {isa = PBXBuildFile; fileRef = A5F6CD982172BA5700CA9AFD /* stations.csv */; };
 		A5F6CDA02172BA6300CA9AFD /* Sparse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6CD9A2172BA6300CA9AFD /* Sparse.swift */; };
@@ -82,9 +88,15 @@
 		A5BE0B792172B3CE00186357 /* SeptaJSONUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeptaJSONUITests.swift; sourceTree = "<group>"; };
 		A5BE0B7B2172B3CE00186357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5BE0B892172B43200186357 /* station.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = station.json; sourceTree = "<group>"; };
+		A5D4EA3A2210FCEE0085BBAA /* url0.url */ = {isa = PBXFileReference; lastKnownFileType = text; path = url0.url; sourceTree = "<group>"; };
+		A5D4EA3C2210FD130085BBAA /* url1.url */ = {isa = PBXFileReference; lastKnownFileType = text; path = url1.url; sourceTree = "<group>"; };
+		A5D4EA3E2210FD730085BBAA /* trainView_url.url */ = {isa = PBXFileReference; lastKnownFileType = text; path = trainView_url.url; sourceTree = "<group>"; };
+		A5D4EA402211A1DC0085BBAA /* StationArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationArrival.swift; sourceTree = "<group>"; };
+		A5D4EA422211A4E70085BBAA /* StationArrivalSuburban.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StationArrivalSuburban.json; sourceTree = "<group>"; };
 		A5DEDA0021735B630003B98E /* TimeAdjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdjust.swift; sourceTree = "<group>"; };
 		A5DEDA0221738B760003B98E /* ViewTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTimes.swift; sourceTree = "<group>"; };
 		A5E075752174136200052FA6 /* RecTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecTimer.swift; sourceTree = "<group>"; };
+		A5EECC4122120676006C4C79 /* StationArrive.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StationArrive.json; sourceTree = "<group>"; };
 		A5F6CD952172B98600CA9AFD /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		A5F6CD982172BA5700CA9AFD /* stations.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stations.csv; sourceTree = "<group>"; };
 		A5F6CD9A2172BA6300CA9AFD /* Sparse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sparse.swift; sourceTree = "<group>"; };
@@ -222,6 +234,7 @@
 				A5F6CD9D2172BA6300CA9AFD /* TrainView.swift */,
 				A5F6CD982172BA5700CA9AFD /* stations.csv */,
 				A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */,
+				A5D4EA402211A1DC0085BBAA /* StationArrival.swift */,
 			);
 			path = "JSON Parse";
 			sourceTree = "<group>";
@@ -229,11 +242,16 @@
 		A5F6CDA62172BA6F00CA9AFD /* Fixtures for Testing */ = {
 			isa = PBXGroup;
 			children = (
+				A5D4EA3E2210FD730085BBAA /* trainView_url.url */,
+				A5D4EA3A2210FCEE0085BBAA /* url0.url */,
+				A5D4EA3C2210FD130085BBAA /* url1.url */,
 				A5F6CDA92172BAA000CA9AFD /* RRSchedules.json */,
 				A5F6CDAB2172BAA100CA9AFD /* stationTostation.json */,
 				A5F6CDAC2172BAA100CA9AFD /* trainview.json */,
 				A5F6CDAA2172BAA100CA9AFD /* depart.json */,
 				A5F6CDA72172BA9600CA9AFD /* a.txt */,
+				A5D4EA422211A4E70085BBAA /* StationArrivalSuburban.json */,
+				A5EECC4122120676006C4C79 /* StationArrive.json */,
 			);
 			name = "Fixtures for Testing";
 			path = "New Group";
@@ -373,13 +391,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D4EA3B2210FCEE0085BBAA /* url0.url in Resources */,
 				A5F6CDA82172BA9600CA9AFD /* a.txt in Resources */,
 				A5BE0B642172B3CE00186357 /* LaunchScreen.storyboard in Resources */,
+				A5D4EA3F2210FD730085BBAA /* trainView_url.url in Resources */,
 				A5F6CDAD2172BAA100CA9AFD /* RRSchedules.json in Resources */,
+				A5D4EA432211A4E70085BBAA /* StationArrivalSuburban.json in Resources */,
 				A5BE0B612172B3CE00186357 /* Assets.xcassets in Resources */,
+				A5D4EA3D2210FD130085BBAA /* url1.url in Resources */,
 				A5F6CDAF2172BAA100CA9AFD /* stationTostation.json in Resources */,
 				A5F6CDAE2172BAA100CA9AFD /* depart.json in Resources */,
 				A5BE0B5F2172B3CD00186357 /* Main.storyboard in Resources */,
+				A5EECC4222120676006C4C79 /* StationArrive.json in Resources */,
 				A5F6CD992172BA5700CA9AFD /* stations.csv in Resources */,
 				A5F6CDB02172BAA100CA9AFD /* trainview.json in Resources */,
 			);
@@ -417,6 +440,7 @@
 			files = (
 				A5F6CDA32172BA6300CA9AFD /* TrainView.swift in Sources */,
 				A5BE0B5C2172B3CD00186357 /* ViewController.swift in Sources */,
+				A5D4EA412211A1DC0085BBAA /* StationArrival.swift in Sources */,
 				A5DEDA0321738B760003B98E /* ViewTimes.swift in Sources */,
 				A5F6CDA02172BA6300CA9AFD /* Sparse.swift in Sources */,
 				A5F6CDA22172BA6300CA9AFD /* StationToStation.swift in Sources */,
