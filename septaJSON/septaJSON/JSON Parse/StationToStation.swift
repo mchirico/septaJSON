@@ -59,6 +59,47 @@ class Travel {
     recTimer[1].stringTime(s: (sts[1].records?.sts[0].orig_departure_time)!)
   }
   
+  func nextStations() -> String {
+    var nextStationNorth = ""
+    var nextStationSouth = ""
+    
+    if let trainno = sts[0].records?.sts[0].orig_train {
+      nextStationSouth = self.nextStationSouth(trainno: trainno)
+    }
+    
+    if let trainno = sts[1].records?.sts[0].orig_train {
+      nextStationNorth = self.nextStationNorth(trainno: trainno)
+    }
+    
+    return " \(nextStationSouth) ,\t \(nextStationNorth)"
+  }
+  
+  func nextStationNorth(trainno: String) -> String {
+    if let trains_N = stationArrival.records?.sa?[0].Northbound {
+      for train in trains_N {
+        if trainno == train.train_id {
+          if let station = train.next_station {
+            return station
+          }
+        }
+      }
+    }
+    return ""
+  }
+  
+  func nextStationSouth(trainno: String) -> String {
+    if let trains_N = stationArrival.records?.sa?[1].Southbound {
+      for train in trains_N {
+        if trainno == train.train_id {
+          if let station = train.next_station {
+            return station
+          }
+        }
+      }
+    }
+    return ""
+  }
+  
   func plannedTrackNorth(trainno: String) -> String {
     if let trains_N = stationArrival.records?.sa?[0].Northbound {
       for train in trains_N {

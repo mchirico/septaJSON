@@ -245,6 +245,27 @@ https://www3.septa.org/hackathon/TrainView/
     
   }
   
+  func testNext() {
+    
+    let trainView_url = "https://github.com/mchirico/septaJSON/raw/develop/fixtures/trainView_url.json"
+    let url0 = "https://github.com/mchirico/septaJSON/raw/develop/fixtures/url0.json"
+    let url1 = "https://github.com/mchirico/septaJSON/raw/develop/fixtures/url1.json"
+    let station_url = "https://github.com/mchirico/septaJSON/raw/develop/fixtures/station_url.json"
+    
+    let t = Travel(trainView_url: trainView_url, url0: url0, url1: url1, station_url: station_url)
+    
+    XCTAssert("Temple U" == t.nextStationSouth(trainno: "465"))
+    XCTAssert("Jenkintown-Wyncote" == t.nextStationSouth(trainno: "581"))
+    
+    XCTAssert("30th St" == t.nextStationNorth(trainno: "390"))
+    
+    let r = t.sts[0].records!.sts[0].orig_train
+    print("\n\nr==\(r)")
+    
+    let expected = "  ,\t "
+    XCTAssert(t.nextStations() == expected)
+  }
+  
   func testParseString() {
     // String(data: data!, encoding: .utf8)
     if let url = Bundle.main.url(forResource: "depart", withExtension: "json") {
