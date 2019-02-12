@@ -16,9 +16,7 @@ class ViewTimes: UIViewController {
   
   @IBOutlet weak var label0: UILabel!
   
-  
   let travel = Travel()
-  
   
   var timer: Timer!
   
@@ -27,9 +25,6 @@ class ViewTimes: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-    
-    
-    
     
     delegates()
     startTimer()
@@ -40,8 +35,6 @@ class ViewTimes: UIViewController {
     stopTimer()
   }
   
-  
-  
   func delegates() {
     tableView0.delegate = self
     tableView1.delegate = self
@@ -49,7 +42,6 @@ class ViewTimes: UIViewController {
     tableView0.dataSource = self
     tableView1.dataSource = self
   }
-  
   
   func startTimer() {
     timer = Timer.scheduledTimer(timeInterval: 7, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
@@ -61,7 +53,6 @@ class ViewTimes: UIViewController {
     timer = nil
   }
   
-  
   @objc func refreshData() {
     
     travel.refresh()
@@ -69,17 +60,13 @@ class ViewTimes: UIViewController {
     //  Ref: https://ru-clip.net/video/whbyVPFFh4M/contacts-animations-reload-rows-in-uitableview-ep-2.html
     //  Ref: https://www.hackingwithswift.com/articles/80/how-to-find-and-fix-memory-leaks-using-instruments
     
-    
     if travel.count(index: 0) != tableView0.numberOfRows(inSection: 0) ||
-      travel.count(index: 1) != tableView1.numberOfRows(inSection: 0)
-    {
+      travel.count(index: 1) != tableView1.numberOfRows(inSection: 0) {
       tableView0.reloadData()
       tableView1.reloadData()
       return
       
-      
     }
-    
     
     for i in 0..<travel.count(index: 0) {
       let indexPath = IndexPath(row: i, section: 0)
@@ -96,15 +83,12 @@ class ViewTimes: UIViewController {
     
     label0.text = "\(travel.getMinutes())"
     
-    
   }
-  
   
 }
 
 extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
     
     if tableView == tableView0 {
       return travel.count(index: 0)
@@ -119,13 +103,11 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    
     if tableView == tableView0 {
       
       if let cell = tableView.dequeueReusableCell(withIdentifier: "cell0") {
         
         bgVF.bgContainer0[indexPath.row].frame = CGRect(x: 2, y: 0, width: cell.bounds.width - 4, height: (cell.bounds.height)-2)
-        
         
         bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.gray
         bgVF.bgContainer0[indexPath.row].layer.borderWidth = 3
@@ -135,18 +117,19 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
         
         bgVF.bgContainer0[indexPath.row].center.x -=  view.bounds.width
         
-        
-        bgVF.labelContainer0[indexPath.row].frame = CGRect(x:0, y:10, width:200, height:15)
+        bgVF.labelContainer0[indexPath.row].frame = CGRect(x: 35,
+                                                           y: 12,
+                                                           width: 297,
+                                                           height: 15)
         
         //label.center = CGPointMake(160, 284)
-        bgVF.labelContainer0[indexPath.row].textAlignment = NSTextAlignment.center
+        bgVF.labelContainer0[indexPath.row].textAlignment = NSTextAlignment.left
         
         bgVF.labelContainer0[indexPath.row].textColor = UIColor.black
         bgVF.labelContainer0[indexPath.row].backgroundColor = UIColor.clear
         bgVF.labelContainer0[indexPath.row].alpha = 10
         
-        bgVF.labelContainer0[indexPath.row].text = travel.msg(index: 0,row: indexPath.row)
-        
+        bgVF.labelContainer0[indexPath.row].text = travel.msg(index: 0, row: indexPath.row)
         
         if  indexPath.row == 0 {
           switch travel.getMinutes()[0] {
@@ -165,8 +148,6 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
           bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.lightGray
         }
         
-        
-        
         //label.text = "title: \(indexPath.row)"
         bgVF.labelContainer0[indexPath.row].tag = 101
         bgVF.labelContainer0[indexPath.row].font  = UIFont(name: "Avenir", size: 17.0)
@@ -181,10 +162,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
       
     }
     
-    
-    
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
-   
     
     bgVF.bgContainer1[indexPath.row].frame = CGRect(x: 15, y: 0, width: cell!.bounds.width - 20, height: 40)
     
@@ -197,16 +175,17 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
     bgVF.bgContainer1[indexPath.row].center.x -=  view.bounds.width
     
- 
-    
-    bgVF.bgM[indexPath.row].frame = CGRect(x: 20, y: 3.4, width: 290, height: 31)
+    bgVF.bgM[indexPath.row].frame = CGRect(x: 20, y: 3.7, width: 290, height: 31)
     bgVF.bgM[indexPath.row].backgroundColor = UIColor.white
     bgVF.bgM[indexPath.row].layer.borderWidth = 1
     bgVF.bgM[indexPath.row].alpha = 1
     bgVF.bgM[indexPath.row].layer.cornerRadius = 9
     bgVF.bgM[indexPath.row].tag = 300
     
-    bgVF.labelContainer1[indexPath.row].frame = CGRect(x:10, y:10, width:288, height:15)
+    bgVF.labelContainer1[indexPath.row].frame = CGRect(x: 10,
+                                                       y: 10,
+                                                       width: 288,
+                                                       height: 15)
     bgVF.labelContainer1[indexPath.row].textAlignment = NSTextAlignment.left
     
     bgVF.labelContainer1[indexPath.row].textColor = UIColor.black
@@ -239,9 +218,6 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     bgVF.labelContainer1[indexPath.row].tag = 102
     bgVF.labelContainer1[indexPath.row].font  = UIFont(name: "Avenir", size: 17.0)
     
-    
- 
-    
     UIView.animate(withDuration: 0.5) {
       self.bgVF.bgContainer1[indexPath.row].center.x += self.view.bounds.width
     }
@@ -256,11 +232,4 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
 
   }
   
-  
-  
 }
-
-
-
-
-

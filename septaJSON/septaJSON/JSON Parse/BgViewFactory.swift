@@ -19,8 +19,6 @@ class BgViewFactory {
   
   var number = 0
   
-  
-  
   init(number: Int) {
     
     self.number = number
@@ -29,8 +27,8 @@ class BgViewFactory {
       let  bgView1: UIView = UIView(frame: CGRect(x: 2, y: 0, width: 200, height: 200))
       let  bgViewM: UIView = UIView(frame: CGRect(x: 2, y: 0, width: 200, height: 200))
       
-      let label0 = UILabel(frame: CGRect(x:0, y:10, width:200, height:15))
-      let label1 = UILabel(frame: CGRect(x:0, y:10, width:200, height:15))
+      let label0 = UILabel(frame: CGRect(x: 0, y: 10, width: 200, height: 15))
+      let label1 = UILabel(frame: CGRect(x: 0, y: 10, width: 200, height: 15))
       
       bgView0.addSubview(label0)
       bgViewM.addSubview(label1)
@@ -46,6 +44,5 @@ class BgViewFactory {
     }
     
   }
-  
   
 }

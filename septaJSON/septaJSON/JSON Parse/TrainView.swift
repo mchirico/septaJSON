@@ -15,29 +15,29 @@ import Foundation
 
 class TrainView: SeptaJSON {
   
-  struct TV:Decodable {
-    let tv:[Trains]
+  struct TV: Decodable {
+    let tv: [Trains]
   }
   
-  struct Trains:Decodable {
-    let lat:String
-    let lon:String
-    let trainno:String
-    let service:String
-    let dest:String
-    let nextstop:String
-    let line:String
-    let consist:String
-    let heading:Double?
-    let late:Int
-    let SOURCE:String
-    let TRACK:String
-    let TRACK_CHANGE:String
+  struct Trains: Decodable {
+    let lat: String
+    let lon: String
+    let trainno: String
+    let service: String
+    let dest: String
+    let nextstop: String
+    let line: String
+    let consist: String
+    let heading: Double?
+    let late: Int
+    let SOURCE: String
+    let TRACK: String
+    let TRACK_CHANGE: String
     
   }
   
-  var urlResults:String = ""
-  var records:TV?
+  var urlResults: String = ""
+  var records: TV?
   
   func getURL(url: String) {
     let r = Request()
@@ -48,8 +48,8 @@ class TrainView: SeptaJSON {
     let startOfpt = urlResults.startIndex
     if let endOfpt = urlResults.firstIndex(of: "[") {
       
-      urlResults.replaceSubrange(startOfpt..<endOfpt,with: "{\"tv\":")
-      urlResults = urlResults + "}"
+      urlResults.replaceSubrange(startOfpt..<endOfpt, with: "{\"tv\":")
+      urlResults += "}"
       
     }
   }
@@ -59,7 +59,7 @@ class TrainView: SeptaJSON {
     do {
       self.records = try JSONDecoder().decode(TV.self, from: data.data(using: .utf8)!)
     } catch {
-      print("Error (TrainView):",error.localizedDescription)
+      print("Error (TrainView):", error.localizedDescription)
     }
     
   }
