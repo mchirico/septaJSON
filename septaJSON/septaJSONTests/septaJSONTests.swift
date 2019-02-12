@@ -230,6 +230,17 @@ https://www3.septa.org/hackathon/TrainView/
   }
   
   
+  // TODO: Create a lot more tests
+  func testTravelLive(){
+    let t = Travel()
+   
+     XCTAssert(t.count(index: 0) >= 0)
+     XCTAssert(t.sts.count > 0)
+    
+    
+  }
+  
+  
   
   
   
