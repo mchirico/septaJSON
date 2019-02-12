@@ -17,15 +17,12 @@ class TimeAdjust {
     let stringDate = dateFormatter.string(from: now)
     let appendTime = "\(stringDate) \(time)"
     
-    
     dateFormatter.dateFormat = "yyyy-MM-dd hh:mma" //Input Format
     dateFormatter.timeZone = NSTimeZone(name: "UTC")! as TimeZone
     let UTCDate = dateFormatter.date(from: appendTime)
     
-    
     return UTCDate
   }
-  
   
   func UTCToLocal(UTCDateString: String) -> String {
     let dateFormatter = DateFormatter()

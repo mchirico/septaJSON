@@ -6,7 +6,6 @@
 //  Copyright © 2019 Michael Chirico. All rights reserved.
 //
 
-
 /*
  http://www3.septa.org/hackathon/Arrivals/Suburban%20Station/5/
  
@@ -15,40 +14,37 @@
 import Foundation
 
 class StationArrival: SeptaJSON {
-  struct SA:Decodable {
-    let sa:[Arrival]?
+  struct SA: Decodable {
+    let sa: [Arrival]?
   }
   
-  struct Arrival:Decodable {
-    let Northbound:[Train]?
-    let Southbound:[Train]?
+  struct Arrival: Decodable {
+    let Northbound: [Train]?
+    let Southbound: [Train]?
   }
   
-  
-  struct Train:Decodable {
-    let direction:String
-    let path:String
-    let train_id:String
-    let origin:String?
-    let destination:String?
-    let line:String?
-    let status:String?
-    let service_type:String?
-    let next_station:String?
-    let sched_time:String?
-    let depart_time:String?
-    let track:String?
-    let track_change:String?
-    let platform:String?
-    let platform_change:String?
+  struct Train: Decodable {
+    let direction: String
+    let path: String
+    let train_id: String
+    let origin: String?
+    let destination: String?
+    let line: String?
+    let status: String?
+    let service_type: String?
+    let next_station: String?
+    let sched_time: String?
+    let depart_time: String?
+    let track: String?
+    let track_change: String?
+    let platform: String?
+    let platform_change: String?
     
   }
   
-  var urlResults:String = ""
+  var urlResults: String = ""
   // var records:SA?
-  var records:SA?
-  
-  
+  var records: SA?
   
   func getURL(url: String) {
     let r = Request()
@@ -59,7 +55,7 @@ class StationArrival: SeptaJSON {
     let startOfpt = urlResults.startIndex
     if let endOfpt = urlResults.firstIndex(of: "[") {
       
-      urlResults.replaceSubrange(startOfpt..<endOfpt,with: "{\"sa\":")
+      urlResults.replaceSubrange(startOfpt..<endOfpt, with: "{\"sa\":")
       
     }
   }
@@ -69,7 +65,7 @@ class StationArrival: SeptaJSON {
     do {
       self.records = try JSONDecoder().decode(SA.self, from: data.data(using: .utf8)!)
     } catch {
-      print("Error (StationArrival):",error.localizedDescription)
+      print("Error (StationArrival):", error.localizedDescription)
     }
     
   }

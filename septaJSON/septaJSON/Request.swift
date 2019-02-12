@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Request{
+class Request {
   
   var contents = ""
   
@@ -67,13 +67,12 @@ class Request{
   }
   */
   
-  func getURL(url: String){
+  func getURL(url: String) {
     
 // Maybe
 // https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory
 // Also
     // https://www.raywenderlich.com/567-urlsession-tutorial-getting-started
-    
     
     if let url = URL(string: url) {
       

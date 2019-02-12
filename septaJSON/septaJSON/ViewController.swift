@@ -20,6 +20,4 @@ class ViewController: UIViewController {
     // print("\(r.contents)")
   }
 
-
 }
-

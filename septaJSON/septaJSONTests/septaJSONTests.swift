@@ -19,8 +19,6 @@ class SeptaJSONTests: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
   
-  
-  
   func testParse() {
     let r = Request()
     let url = "https://www3.septa.org/hackathon/Arrivals/Elkins%20Park"
@@ -63,7 +61,7 @@ https://www3.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elki
     p.parseString(data: p.urlResults)
     
     if p.records!.sts.count < 3 {
-      XCTFail()
+       XCTFail()
     }
     
     print(p.records!.sts)
@@ -82,7 +80,6 @@ https://www3.septa.org/hackathon/TrainView/
       XCTFail()
     }
   }
-  
   
   func testRRSchedules() {
     
@@ -106,11 +103,8 @@ https://www3.septa.org/hackathon/TrainView/
     print(p2.urlResults)
     XCTAssert((p2.records?.rr.count)! > 3, "Not getting trains")
     
-    
   }
-  
-  
-  
+
   func testRRSchedulesBadJSON() {
     
     let p = TrainView()
@@ -137,9 +131,6 @@ https://www3.septa.org/hackathon/TrainView/
     
   }
   
-  
-  
-  
   func testStationToStation() {
     
     //String(data: data!, encoding: .utf8)
@@ -156,12 +147,11 @@ https://www3.septa.org/hackathon/TrainView/
         XCTAssert(train_id == "412")
         
       } catch {
-        print("Error:",error.localizedDescription)
+        print("Error:", error.localizedDescription)
         XCTFail()
       }
     }
   }
-  
   
   func testRecTimer() {
     
@@ -187,14 +177,12 @@ https://www3.septa.org/hackathon/TrainView/
         XCTAssert(r.ti != 0)
         
       } catch {
-        print("Error:",error.localizedDescription)
+        print("Error:", error.localizedDescription)
         XCTFail()
       }
     }
     
   }
-  
-  
   
   func testStationToStationLive() {
     let url = "https://www3.septa.org/hackathon/NextToArrive/?req1=Suburban%20Station&req2=Elkins%20Park&req3=40"
@@ -205,49 +193,60 @@ https://www3.septa.org/hackathon/TrainView/
     
     print(sts.records!)
     XCTAssert(sts.records!.sts.count >= 3, "This is live data. May not work after 11pm")
-    
-    
   }
   
   // Swift - How do you mock http calls?
   // https://github.com/kylef/Mockingjay
-  func testTravel(){
+  func testTravel() {
     if let url = Bundle.main.url(forResource: "trainView_url", withExtension: "url") {
       
       do {
         let data = try Data(contentsOf: url)
         let sdata = String(data: data, encoding: .utf8)
         
-        // print("here",sdata)
+        print("here", sdata)
         
       } catch {
-        print("Error:",error.localizedDescription)
+        print("Error:", error.localizedDescription)
         XCTFail()
       }
-      
       
     }
   }
   
-  
   // TODO: Create a lot more tests
-  func testTravelLive(){
-    let t = Travel()
-   
-     XCTAssert(t.count(index: 0) >= 0)
-     XCTAssert(t.sts.count > 0)
+  func testTravelStatic() {
+    let trainView_url = "https://github.com/mchirico/septaJSON/raw/develop/fixtures/trainView_url.json"
+    let url0 = "https://github.com/mchirico/septaJSON/raw/develop/fixtures/url0.json"
+    let url1 = "https://github.com/mchirico/septaJSON/raw/develop/fixtures/url1.json"
+    let station_url = "https://github.com/mchirico/septaJSON/raw/develop/fixtures/station_url.json"
     
-     
+    let t = Travel(trainView_url: trainView_url, url0: url0, url1: url1, station_url: station_url)
     
+    XCTAssert(t.sts[0].records!.sts[0].orig_train == "467")
+    XCTAssert(t.sts[0].records!.sts[0].orig_departure_time == " 8:28PM")
+    XCTAssert(t.sts[0].records!.sts[3].orig_departure_time == " 9:47PM")
+    XCTAssert(t.trainView.records!.tv[3].line == "Media/Elwyn")
+    XCTAssert(t.trainView.records!.tv[0].lat == "39.964317833333")
+    
+    let track = t.plannedTrackNorth(trainno: "390")
+    XCTAssert(track == "2A")
+    
+    let msg = t.msgTrack(index: 0, row: 0, nextstop: "30th St")
+    //XCTAssert(msg == "467:  8:28PM On time   ")
+    
+    let train = t.msgTrack(index: 0, row: 0, nextstop: "30th St")
+    
+    print("\n\n\n ********* \n\n ->\(msg)<-")
+    
+    XCTAssert(t.count(index: 0) == 7)
+    XCTAssert(t.trainView.records!.tv.count == 34)
+    XCTAssert(t.sts.count > 0)
     
   }
   
-  
-  
-  
-  
   func testParseString() {
-    //String(data: data!, encoding: .utf8)
+    // String(data: data!, encoding: .utf8)
     if let url = Bundle.main.url(forResource: "depart", withExtension: "json") {
       
       do {
@@ -272,16 +271,14 @@ https://www3.septa.org/hackathon/TrainView/
           XCTFail()
         }
         
-        
       } catch {
-        print("Error:",error.localizedDescription)
+        print("Error:", error.localizedDescription)
         XCTFail()
       }
     }
   }
   
-  
-  func testReadStations(){
+  func testReadStations() {
     
     let r = ReadStations()
     r.readCSV()
@@ -295,7 +292,6 @@ Did a new station get added?
     
   }
   
-  
   func testTime() {
     let t = TimeAdjust()
     let s = "7:23PM"
@@ -303,9 +299,6 @@ Did a new station get added?
     XCTAssert(t.timeAppend(time: s) != nil, "Time not converting")
     
   }
-  
-  
-  
   
   func testExample() {
     // This is an example of a functional test case.
@@ -319,8 +312,7 @@ Did a new station get added?
     }
   }
   
-  
-  func testStationArrivalLiveTest(){
+  func testStationArrivalLiveTest() {
     let url = "https://www3.septa.org/hackathon/Arrivals/Suburban%20Station/5/"
     
     let sa = StationArrival()
@@ -333,13 +325,9 @@ Did a new station get added?
         print("train_id: \(train.train_id)")
         print("train_id: \(String(describing: train.track))")
       }
-      
     }
     
-    
   }
-  
-  
   
   func testStationArriveWithFixture() {
     
@@ -356,13 +344,10 @@ Did a new station get added?
                   "Need both Northbound and Southbound")
         
       } catch {
-        print("Error:",error.localizedDescription)
+        print("Error:", error.localizedDescription)
         XCTFail()
       }
     }
   }
-  
-  
-  
-  
+
 }

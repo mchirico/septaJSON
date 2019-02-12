@@ -8,12 +8,10 @@
 
 import Foundation
 
-extension String
-{
-  func mins() -> [Int?]
-  {
-    if let regex = try? NSRegularExpression(pattern: "[a-z0-9]+ mins", options: .caseInsensitive)
-    {
+extension String {
+  func mins() -> [Int?] {
+    if let regex = try? NSRegularExpression(pattern: "[a-z0-9]+ mins",
+                                            options: .caseInsensitive) {
       let string = self as NSString
       
       return regex.matches(in: self, options: [], range: NSRange(location: 0, length: string.length)).map {
@@ -25,10 +23,8 @@ extension String
   }
 }
 
-
-
 class RecTimer {
-  var date:Date?
+  var date: Date?
   
   var ti=0
   var ms=0
@@ -38,8 +34,7 @@ class RecTimer {
   
   var delay=0
   
-  
-  func delay(s: String?){
+  func delay(s: String?) {
     
     if let s = s {
       
@@ -59,8 +54,7 @@ class RecTimer {
     
   }
   
-  
-  func stringTime(s: String){
+  func stringTime(s: String) {
     
     let d = Date()
     let dateFormatter = DateFormatter()
