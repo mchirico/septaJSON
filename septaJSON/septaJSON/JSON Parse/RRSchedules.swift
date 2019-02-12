@@ -10,20 +10,20 @@ import Foundation
 
 class RRSchedules: SeptaJSON {
   
-  struct RR:Decodable {
-    let rr:[Trains]
+  struct RR: Decodable {
+    let rr: [Trains]
   }
   
-  struct Trains:Decodable {
-    let station:String
-    let sched_tm:String
-    let est_tm:String
-    let act_tm:String
+  struct Trains: Decodable {
+    let station: String
+    let sched_tm: String
+    let est_tm: String
+    let act_tm: String
     
   }
   
-  var urlResults:String = ""
-  var records:RR?
+  var urlResults: String = ""
+  var records: RR?
   
   func getURL(url: String) {
     let r = Request()
@@ -34,8 +34,8 @@ class RRSchedules: SeptaJSON {
     let startOfpt = urlResults.startIndex
     if let endOfpt = urlResults.firstIndex(of: "[") {
       
-      urlResults.replaceSubrange(startOfpt..<endOfpt,with: "{\"rr\":")
-      urlResults = urlResults + "}"
+      urlResults.replaceSubrange(startOfpt..<endOfpt, with: "{\"rr\":")
+      urlResults +=  "}"
       
     }
   }
@@ -44,13 +44,9 @@ class RRSchedules: SeptaJSON {
     
     do {
       self.records = try JSONDecoder().decode(RR.self, from: data.data(using: .utf8)!)
-      
-      if let records = self.records {
-        print(records.rr[0] )
-      }
-      
+
     } catch {
-      print("Error:",error.localizedDescription)
+      print("Error (RRSchedules):", error.localizedDescription)
     }
     
   }

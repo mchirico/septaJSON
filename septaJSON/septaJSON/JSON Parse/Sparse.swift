@@ -10,26 +10,24 @@ import Foundation
 
 class Sparse {
   
-  var date:Date?
-  var stringDate:String?
-  var orig:String = ""
+  var date: Date?
+  var stringDate: String?
+  var orig: String = ""
   
-  var offset:Int?
+  var offset: Int?
   
-  var json:String = "{}"
-  
+  var json: String = "{}"
   
   func secondsFromGMT() -> Int {
     return Int(TimeZone.current.secondsFromGMT())
   }
-  
   
   func process(s: String) {
     getTime(s: s)
     makeValidJSON(s: s)
   }
   
-  func getTime(s: String)  {
+  func getTime(s: String) {
     
     orig = String(s)
     
@@ -55,8 +53,7 @@ class Sparse {
     
     date = date?.addingTimeInterval(TimeInterval(secondsFromGMT()))
     stringDate =  String(time)
-    
-    
+
   }
   
   func makeValidJSON(s: String) {
@@ -64,9 +61,8 @@ class Sparse {
     json = String(s)
     let startOfpt = json.firstIndex(of: "\"")!
     let endOfpt = json.firstIndex(of: "[")!
-    json.replaceSubrange(startOfpt..<endOfpt,with: "\"Depart\":")
+    json.replaceSubrange(startOfpt..<endOfpt, with: "\"Depart\":")
     
   }
-  
   
 }

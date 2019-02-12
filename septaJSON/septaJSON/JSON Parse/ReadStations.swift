@@ -17,9 +17,9 @@ import Foundation
 
 class ReadStations {
   
-  var data:[String]?
+  var data: [String]?
   
-  func readCSV(){
+  func readCSV() {
     if let url = Bundle.main.url(forResource: "stations", withExtension: "csv") {
       
       do {
@@ -28,7 +28,7 @@ class ReadStations {
         self.data = t?.components(separatedBy: "\n")
         
       } catch {
-        print("Error:",error.localizedDescription)
+        print("Error (ReadStations):", error.localizedDescription)
         
       }
       
