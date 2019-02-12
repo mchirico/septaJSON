@@ -81,7 +81,7 @@ class ViewTimes: UIViewController {
     // tableView0.reloadData()
     // tableView1.reloadData()
     
-    label0.text = "\(travel.getMinutes())"
+    label0.text = "\(travel.getMinutes()) \t \(travel.nextStations())"
     
   }
   
