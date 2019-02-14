@@ -29,6 +29,24 @@ class SeptaJSONUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+      
+      /*
+      let app = XCUIApplication()
+      
+      app.navigationBars["SeptaJSON.View"].buttons["A/D"].tap()
+      
+      app.navigationBars["SeptaJSON.ViewTimes"].buttons["Back"].tap()
+       
+       let app = XCUIApplication()
+       app.navigationBars["SeptaJSON.View"].buttons["A/D"].tap()
+       app.tables/*@START_MENU_TOKEN@*/.staticTexts["5315 \t  6:51AM \t On time"]/*[[".cells.staticTexts[\"5315 \\t  6:51AM \\t On time\"]",".staticTexts[\"5315 \\t  6:51AM \\t On time\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+       app.statusBars.children(matching: .other).element.children(matching: .other).element(boundBy: 0).swipeDown()
+      */
+      
+      let app = XCUIApplication()
+      app.navigationBars["SeptaJSON.View"].buttons["A/D"].tap()
+      app.navigationBars["SeptaJSON.ViewTimes"].buttons["Back"].tap()
+      
     }
 
 }
