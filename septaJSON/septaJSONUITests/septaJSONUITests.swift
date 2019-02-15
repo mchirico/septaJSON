@@ -48,5 +48,15 @@ class SeptaJSONUITests: XCTestCase {
       app.navigationBars["SeptaJSON.ViewTimes"].buttons["Back"].tap()
       
     }
+  
+  func testJumpToSegue() {
+    let app = XCUIApplication()
+    app.navigationBars["SeptaJSON.View"].buttons["A/D"].tap()
+   // .elementBoundByIndex(0).
+    app.tables.element(boundBy: 1).tap()
+    app.navigationBars["SeptaJSON.ViewCtrFromSelect"].buttons["Back"].tap()
+    app.navigationBars["SeptaJSON.ViewTimes"].buttons["Back"].tap()
+    
+  }
 
 }

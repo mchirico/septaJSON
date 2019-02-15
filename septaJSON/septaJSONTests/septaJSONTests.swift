@@ -204,7 +204,7 @@ https://www3.septa.org/hackathon/TrainView/
         let data = try Data(contentsOf: url)
         let sdata = String(data: data, encoding: .utf8)
         
-        print("here", sdata)
+        print("here", sdata!)
         
       } catch {
         print("Error:", error.localizedDescription)
@@ -235,8 +235,8 @@ https://www3.septa.org/hackathon/TrainView/
     let msg = t.msgTrack(index: 0, row: 0, nextstop: "30th St")
     //XCTAssert(msg == "467:  8:28PM On time   ")
     
-    let train = t.msgTrack(index: 0, row: 0, nextstop: "30th St")
-    
+    _ = t.msgTrack(index: 0, row: 0, nextstop: "30th St")
+
     print("\n\n\n ********* \n\n ->\(msg)<-")
     
     XCTAssert(t.count(index: 0) == 7)
