@@ -167,22 +167,24 @@ class Travel {
     return "No data"
   }
   
+  // TODO: Next
   func msgTrack(index: Int, row: Int, nextstop: String) -> String {
     if let depart = sts[index].records?.sts[row].orig_departure_time,
       let train = sts[index].records?.sts[row].orig_train,
-      let delay = sts[index].records?.sts[row].orig_delay {
+      let delay = sts[index].records?.sts[row].orig_delay,
+      let orig_arrive = sts[index].records?.sts[row].orig_arrival_time {
       
       if row == 0 {
         let track = self.track(trainno: train, nextstop: "Suburban Station")
         if track != "" {
           
-          return "\(train) \t \(depart) \t \(delay) \t *\(track)*"
+          return "\(train) \t \(depart) \t \(delay) \t *\(track)* \t\(orig_arrive)"
         }
       }
       
       let track = plannedTrackNorth(trainno: train)
       
-      let txt = "\(train) \t \(depart) \t \(delay) \t \(track)"
+      let txt = "\(train) \t \(depart) \t \(delay) \t \(track) \t\(orig_arrive)"
       return txt
     }
     return "No data"

@@ -11,6 +11,10 @@
 		A58D74B221738F6300EFFE59 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74B121738F6300EFFE59 /* TableViewCell1.swift */; };
 		A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */; };
 		A598ACF521AFFCEC00EDBA07 /* bgViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */; };
+		A5B29F0E2219D236000D56B3 /* ViewCtrFromSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */; };
+		A5B29F122219FAD3000D56B3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F112219FAD2000D56B3 /* Network.swift */; };
+		A5B29F162219FBA3000D56B3 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F152219FBA3000D56B3 /* NetworkTests.swift */; };
+		A5B29F182219FE24000D56B3 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = A5B29F172219FE24000D56B3 /* sample.json */; };
 		A5BE0B5A2172B3CD00186357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B592172B3CD00186357 /* AppDelegate.swift */; };
 		A5BE0B5C2172B3CD00186357 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0B5B2172B3CD00186357 /* ViewController.swift */; };
 		A5BE0B5F2172B3CD00186357 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BE0B5D2172B3CD00186357 /* Main.storyboard */; };
@@ -74,6 +78,10 @@
 		A598ACF221AFFCEC00EDBA07 /* bgViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bgViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bgViewTests.swift; sourceTree = "<group>"; };
 		A598ACF621AFFCEC00EDBA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCtrFromSelect.swift; sourceTree = "<group>"; };
+		A5B29F112219FAD2000D56B3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A5B29F152219FBA3000D56B3 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		A5B29F172219FE24000D56B3 /* sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		A5BE0B562172B3CD00186357 /* SeptaJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeptaJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BE0B592172B3CD00186357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5BE0B5B2172B3CD00186357 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 				A5F6CD952172B98600CA9AFD /* Request.swift */,
 				A58D74B32173CF1C00EFFE59 /* ViewTimes */,
 				A5BE0B592172B3CD00186357 /* AppDelegate.swift */,
+				A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */,
 				A5BE0B5B2172B3CD00186357 /* ViewController.swift */,
 				A5BE0B5D2172B3CD00186357 /* Main.storyboard */,
 				A5BE0B602172B3CE00186357 /* Assets.xcassets */,
@@ -208,6 +217,7 @@
 			children = (
 				A5BE0B6E2172B3CE00186357 /* SeptaJSONTests.swift */,
 				A5BE0B702172B3CE00186357 /* Info.plist */,
+				A5B29F152219FBA3000D56B3 /* NetworkTests.swift */,
 			);
 			path = SeptaJSONTests;
 			sourceTree = "<group>";
@@ -235,6 +245,7 @@
 				A5F6CD982172BA5700CA9AFD /* stations.csv */,
 				A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */,
 				A5D4EA402211A1DC0085BBAA /* StationArrival.swift */,
+				A5B29F112219FAD2000D56B3 /* Network.swift */,
 			);
 			path = "JSON Parse";
 			sourceTree = "<group>";
@@ -252,6 +263,7 @@
 				A5F6CDA72172BA9600CA9AFD /* a.txt */,
 				A5D4EA422211A4E70085BBAA /* StationArrivalSuburban.json */,
 				A5EECC4122120676006C4C79 /* StationArrive.json */,
+				A5B29F172219FE24000D56B3 /* sample.json */,
 			);
 			name = "Fixtures for Testing";
 			path = "New Group";
@@ -397,6 +409,7 @@
 				A5BE0B642172B3CE00186357 /* LaunchScreen.storyboard in Resources */,
 				A5D4EA3F2210FD730085BBAA /* trainView_url.url in Resources */,
 				A5F6CDAD2172BAA100CA9AFD /* RRSchedules.json in Resources */,
+				A5B29F182219FE24000D56B3 /* sample.json in Resources */,
 				A5D4EA432211A4E70085BBAA /* StationArrivalSuburban.json in Resources */,
 				A5BE0B612172B3CE00186357 /* Assets.xcassets in Resources */,
 				A5D4EA3D2210FD130085BBAA /* url1.url in Resources */,
@@ -473,8 +486,10 @@
 				A5E075762174136200052FA6 /* RecTimer.swift in Sources */,
 				A5BE0B5A2172B3CD00186357 /* AppDelegate.swift in Sources */,
 				A5F6CDA52172BA6300CA9AFD /* RRSchedules.swift in Sources */,
+				A5B29F122219FAD3000D56B3 /* Network.swift in Sources */,
 				A5DEDA0121735B630003B98E /* TimeAdjust.swift in Sources */,
 				A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */,
+				A5B29F0E2219D236000D56B3 /* ViewCtrFromSelect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B29F162219FBA3000D56B3 /* NetworkTests.swift in Sources */,
 				A5BE0B6F2172B3CE00186357 /* SeptaJSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -49,7 +49,9 @@ class ViewTimes: UIViewController {
   }
   
   func stopTimer() {
-    timer.invalidate()
+    if timer != nil {
+      timer.invalidate()
+    }
     timer = nil
   }
   
@@ -175,7 +177,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     
     bgVF.bgContainer1[indexPath.row].center.x -=  view.bounds.width
     
-    bgVF.bgM[indexPath.row].frame = CGRect(x: 20, y: 3.7, width: 290, height: 31)
+    bgVF.bgM[indexPath.row].frame = CGRect(x: 12, y: 3.7, width: 305, height: 31)
     bgVF.bgM[indexPath.row].backgroundColor = UIColor.white
     bgVF.bgM[indexPath.row].layer.borderWidth = 1
     bgVF.bgM[indexPath.row].alpha = 1
@@ -216,7 +218,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     }
     
     bgVF.labelContainer1[indexPath.row].tag = 102
-    bgVF.labelContainer1[indexPath.row].font  = UIFont(name: "Avenir", size: 17.0)
+    bgVF.labelContainer1[indexPath.row].font  = UIFont(name: "Avenir", size: 14.0)
     
     UIView.animate(withDuration: 0.5) {
       self.bgVF.bgContainer1[indexPath.row].center.x += self.view.bounds.width
@@ -229,7 +231,34 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    if tableView.dequeueReusableCell(withIdentifier: "cell1") != nil {
+        print("here: \(indexPath.row)")
+      
+      jump(row: indexPath.row)
+      
+    }
 
+  }
+  
+  func jump(row: Int) {
+    
+    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CustomID0") as? ViewCtrFromSelect
+    
+    vc?.row = row
+    if let train = travel.sts[1].records?.sts[row].orig_train {
+      vc?.data = train
+    }
+    self.navigationController?.pushViewController(vc!, animated: true)
+
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.destination is ViewCtrFromSelect {
+      let vc = segue.destination as? ViewCtrFromSelect
+      
+      vc?.mainViewController = self
+    }
   }
   
 }
