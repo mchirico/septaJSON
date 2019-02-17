@@ -25,14 +25,18 @@ class ViewTimes: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-    
-    delegates()
-    startTimer()
-    refreshData()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     stopTimer()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    delegates()
+    DispatchQueue.main.async { [weak self] in
+      self?.refreshData()
+      self?.startTimer()
+    }
   }
   
   func delegates() {
@@ -44,6 +48,7 @@ class ViewTimes: UIViewController {
   }
   
   func startTimer() {
+    stopTimer()
     timer = Timer.scheduledTimer(timeInterval: 7, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
     timer.fire()
   }
@@ -101,6 +106,11 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     }
     
     return 0
+  }
+  
+  func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+    print("\n\n\n******\n")
+
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

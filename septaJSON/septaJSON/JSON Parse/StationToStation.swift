@@ -158,7 +158,11 @@ class Travel {
   func msg(index: Int, row: Int) -> String {
     if let depart = sts[index].records?.sts[row].orig_departure_time,
       let train = sts[index].records?.sts[row].orig_train,
-      let delay = sts[index].records?.sts[row].orig_delay {
+      var delay = sts[index].records?.sts[row].orig_delay {
+
+      if delay.range(of: "On time", options: .caseInsensitive) != nil {
+        delay = "✅"
+      }
       
       let txt = "\(train) \t \(depart) \t \(delay)"
       
@@ -171,8 +175,12 @@ class Travel {
   func msgTrack(index: Int, row: Int, nextstop: String) -> String {
     if let depart = sts[index].records?.sts[row].orig_departure_time,
       let train = sts[index].records?.sts[row].orig_train,
-      let delay = sts[index].records?.sts[row].orig_delay,
+      var delay = sts[index].records?.sts[row].orig_delay,
       let orig_arrive = sts[index].records?.sts[row].orig_arrival_time {
+      
+      if delay.range(of: "On time", options: .caseInsensitive) != nil {
+        delay = "✅"
+      }
       
       if row == 0 {
         let track = self.track(trainno: train, nextstop: "Suburban Station")
