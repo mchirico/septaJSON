@@ -9,7 +9,7 @@
 /*
  References:
  https://www.raywenderlich.com/7476-networking-with-urlsession/lessons/5
- 
+ https://www.swiftbysundell.com/posts/the-power-of-result-types-in-swift
  */
 
 import Foundation

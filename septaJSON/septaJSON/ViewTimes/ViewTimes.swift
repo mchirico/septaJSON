@@ -110,7 +110,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
     print("\n\n\n******\n")
-
+    
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -145,6 +145,10 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
         
         if  indexPath.row == 0 {
           switch travel.getMinutes()[0] {
+          case let x where x < 17 && x >= 10:
+            bgVF.bgContainer0[indexPath.row].backgroundColor =
+              UIColor.init(red: 0.5,
+                           green: 0.1, blue: 0.6, alpha: 0.5)
           case let x where x < 10 && x >= 8:
             bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.blue
           case let x where x < 8 && x >= 6:
@@ -153,6 +157,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
             bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.yellow
           case let x where x < 5:
             bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.red
+            
           default:
             bgVF.bgContainer0[indexPath.row].backgroundColor = UIColor.lightGray
           }
@@ -162,7 +167,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
         
         //label.text = "title: \(indexPath.row)"
         bgVF.labelContainer0[indexPath.row].tag = 101
-        bgVF.labelContainer0[indexPath.row].font  = UIFont(name: "Avenir", size: 17.0)
+        bgVF.labelContainer0[indexPath.row].font  = UIFont(name: "Avenir", size: 15.0)
         
         cell.addSubview(bgVF.bgContainer0[indexPath.row])
         
@@ -204,12 +209,16 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
     bgVF.labelContainer1[indexPath.row].backgroundColor = UIColor.clear
     bgVF.labelContainer1[indexPath.row].alpha = 10
     
-//    bgVF.labelContainer1[indexPath.row].text = travel.msg(index: 1,row: indexPath.row)
-//
-     bgVF.labelContainer1[indexPath.row].text = travel.msgTrack(index: 1, row: indexPath.row, nextstop: "Suburban Station")
+    //    bgVF.labelContainer1[indexPath.row].text = travel.msg(index: 1,row: indexPath.row)
+    //
+    bgVF.labelContainer1[indexPath.row].text = travel.msgTrack(index: 1, row: indexPath.row, nextstop: "Suburban Station")
     
     if  indexPath.row == 0 {
       switch travel.getMinutes()[1] {
+      case let x where x < 19 && x > 12:
+        bgVF.bgContainer1[indexPath.row].backgroundColor =
+          UIColor.init(red: 0.5,
+                       green: 0.1, blue: 0.6, alpha: 0.5)
       case let x where x <= 12 && x > 10:
         bgVF.bgContainer1[indexPath.row].backgroundColor = UIColor.magenta
       case let x where x <= 10 && x > 8:
@@ -243,12 +252,12 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     if tableView.dequeueReusableCell(withIdentifier: "cell1") != nil {
-        print("here: \(indexPath.row)")
+      print("here: \(indexPath.row)")
       
       jump(row: indexPath.row)
       
     }
-
+    
   }
   
   func jump(row: Int) {
@@ -260,7 +269,7 @@ extension ViewTimes: UITableViewDelegate, UITableViewDataSource {
       vc?.data = train
     }
     self.navigationController?.pushViewController(vc!, animated: true)
-
+    
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

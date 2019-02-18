@@ -13,7 +13,7 @@
 
 import Foundation
 
-class TrainView: SeptaJSON {
+class TrainView: SeptaJSON, RecordResults {
   
   struct TV: Decodable {
     let tv: [Trains]
@@ -45,58 +45,41 @@ class TrainView: SeptaJSON {
   
   var refreshURL = "https://www3.septa.org/hackathon/TrainView/"
   
-  func refresh( completionHandler: @escaping(TV?) -> Void) {
-
-    let url = URL(string: refreshURL)!
+  func getRecords<T>() -> T {
+    return self.records as! T
+  }
+  
+  func setURLresults(results: String) {
+    self.urlResults = results
+  }
+  
+  func getURLresults() -> String {
+    return self.urlResults
+  }
+  
+  func setLastGotRequest(time: Date) {
+    self.lastGotRequest = time
+  }
+  
+  func setLastRequestStatus(status: Int) {
+    self.lastRequestStatus = status
+  }
+  
+  func preParse() {
     
-    networkManager.loadData(from: url) { result in
-      switch result {
-      case .success(let data):
-        self.urlResults = String(data: data, encoding: .utf8) ?? ""
-        if self.urlResults != "" {
-          self.lastGotRequest = Date()
-          self.lastRequestStatus = 1
-          self.parseString(data: self.urlResults)
-
-        } else {
-          self.lastRequestStatus = 0
-        }
-        
-      case .failure:
-        self.lastRequestStatus = -1
-        print("❌ Error TrainView (networkManager): ")
-      }
+    let startOfpt = urlResults.startIndex
+    if let endOfpt = urlResults.firstIndex(of: "[") {
       
-      completionHandler(self.records)
+      urlResults.replaceSubrange(startOfpt..<endOfpt, with: "{\"tv\":")
+      urlResults += "}"
+      
     }
   }
   
-  func networkManager(url: String,
-                      session: NetworkSession = URLSession.shared) {
-    
-    let network = NetworkManager(session: session)
-    let url = URL(string: url)!
-    
-    network.loadData(from: url) { result in
-      switch result {
-      case .success(let data):
-        self.urlResults = String(data: data, encoding: .utf8) ?? ""
-        if self.urlResults != "" {
-          self.lastGotRequest = Date()
-          self.lastRequestStatus = 1
-          self.parseString(data: self.urlResults)
-        } else {
-           self.lastRequestStatus = 0
-        }
-
-      case .failure:
-        self.lastRequestStatus = -1
-        print("❌ Error TrainView (networkManager): ")
-      }
-
-    }
+  func getRefreshURL() -> String {
+    return self.refreshURL
   }
-  
+
   func getURL(url: String) {
     let r = Request()
     r.getURL(url: url)

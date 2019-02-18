@@ -158,13 +158,14 @@ class Travel {
   func msg(index: Int, row: Int) -> String {
     if let depart = sts[index].records?.sts[row].orig_departure_time,
       let train = sts[index].records?.sts[row].orig_train,
-      var delay = sts[index].records?.sts[row].orig_delay {
+      var delay = sts[index].records?.sts[row].orig_delay,
+      let orig_arrive = sts[index].records?.sts[row].orig_arrival_time {
 
       if delay.range(of: "On time", options: .caseInsensitive) != nil {
         delay = "✅"
       }
       
-      let txt = "\(train) \t \(depart) \t \(delay)"
+      let txt = "\(train) \t \(depart) \t \(delay) \t\(orig_arrive)"
       
       return txt
     }

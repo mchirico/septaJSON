@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A53B3B0C221CA8D600D63C4E /* TrainViewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B3B0B221CA8D600D63C4E /* TrainViewReport.swift */; };
+		A53B3B0E221CA92200D63C4E /* TrainViewReportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B3B0D221CA92200D63C4E /* TrainViewReportTests.swift */; };
+		A53B3B11221DB04000D63C4E /* arrivalsElkins.json in Resources */ = {isa = PBXBuildFile; fileRef = A53B3B10221DB04000D63C4E /* arrivalsElkins.json */; };
+		A53B3B13221DB09300D63C4E /* trainview1.json in Resources */ = {isa = PBXBuildFile; fileRef = A53B3B12221DB09300D63C4E /* trainview1.json */; };
+		A53B3B15221DB0B100D63C4E /* trainview2.json in Resources */ = {isa = PBXBuildFile; fileRef = A53B3B14221DB0B100D63C4E /* trainview2.json */; };
+		A53B3B17221DB10400D63C4E /* trainview3.json in Resources */ = {isa = PBXBuildFile; fileRef = A53B3B16221DB10400D63C4E /* trainview3.json */; };
+		A53B3B19221DD48100D63C4E /* NetworkRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B3B18221DD48100D63C4E /* NetworkRefresh.swift */; };
 		A58D74B021738F5C00EFFE59 /* TableViewCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74AF21738F5C00EFFE59 /* TableViewCell0.swift */; };
 		A58D74B221738F6300EFFE59 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74B121738F6300EFFE59 /* TableViewCell1.swift */; };
 		A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */; };
@@ -75,6 +82,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A53B3B0B221CA8D600D63C4E /* TrainViewReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewReport.swift; sourceTree = "<group>"; };
+		A53B3B0D221CA92200D63C4E /* TrainViewReportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewReportTests.swift; sourceTree = "<group>"; };
+		A53B3B10221DB04000D63C4E /* arrivalsElkins.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = arrivalsElkins.json; sourceTree = "<group>"; };
+		A53B3B12221DB09300D63C4E /* trainview1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trainview1.json; sourceTree = "<group>"; };
+		A53B3B14221DB0B100D63C4E /* trainview2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trainview2.json; sourceTree = "<group>"; };
+		A53B3B16221DB10400D63C4E /* trainview3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trainview3.json; sourceTree = "<group>"; };
+		A53B3B18221DD48100D63C4E /* NetworkRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRefresh.swift; sourceTree = "<group>"; };
 		A58D74AF21738F5C00EFFE59 /* TableViewCell0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell0.swift; sourceTree = "<group>"; };
 		A58D74B121738F6300EFFE59 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
 		A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgViewFactory.swift; sourceTree = "<group>"; };
@@ -158,6 +172,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A53B3B0F221DB01000D63C4E /* Fixture for Report */ = {
+			isa = PBXGroup;
+			children = (
+				A53B3B10221DB04000D63C4E /* arrivalsElkins.json */,
+				A53B3B12221DB09300D63C4E /* trainview1.json */,
+				A53B3B14221DB0B100D63C4E /* trainview2.json */,
+				A53B3B16221DB10400D63C4E /* trainview3.json */,
+			);
+			path = "Fixture for Report";
+			sourceTree = "<group>";
+		};
 		A58D74B32173CF1C00EFFE59 /* ViewTimes */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +230,8 @@
 				A5F6CDA62172BA6F00CA9AFD /* Fixtures for Testing */,
 				A5F6CD972172BA1900CA9AFD /* JSON Parse */,
 				A5F6CD952172B98600CA9AFD /* Request.swift */,
+				A53B3B18221DD48100D63C4E /* NetworkRefresh.swift */,
+				A5B29F112219FAD2000D56B3 /* Network.swift */,
 				A58D74B32173CF1C00EFFE59 /* ViewTimes */,
 				A5BE0B592172B3CD00186357 /* AppDelegate.swift */,
 				A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */,
@@ -227,6 +254,7 @@
 				A599E3B3221B36A3008F7A4F /* SeptaJSONTrainViewV2.swift */,
 				A5BE0B702172B3CE00186357 /* Info.plist */,
 				A5B29F152219FBA3000D56B3 /* NetworkTests.swift */,
+				A53B3B0D221CA92200D63C4E /* TrainViewReportTests.swift */,
 			);
 			path = SeptaJSONTests;
 			sourceTree = "<group>";
@@ -251,10 +279,10 @@
 				A5E075752174136200052FA6 /* RecTimer.swift */,
 				A5F6CD9C2172BA6300CA9AFD /* StationToStation.swift */,
 				A5F6CD9D2172BA6300CA9AFD /* TrainView.swift */,
+				A53B3B0B221CA8D600D63C4E /* TrainViewReport.swift */,
 				A5F6CD982172BA5700CA9AFD /* stations.csv */,
 				A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */,
 				A5D4EA402211A1DC0085BBAA /* StationArrival.swift */,
-				A5B29F112219FAD2000D56B3 /* Network.swift */,
 			);
 			path = "JSON Parse";
 			sourceTree = "<group>";
@@ -262,6 +290,7 @@
 		A5F6CDA62172BA6F00CA9AFD /* Fixtures for Testing */ = {
 			isa = PBXGroup;
 			children = (
+				A53B3B0F221DB01000D63C4E /* Fixture for Report */,
 				A5D4EA3E2210FD730085BBAA /* trainView_url.url */,
 				A5D4EA3A2210FCEE0085BBAA /* url0.url */,
 				A5D4EA3C2210FD130085BBAA /* url1.url */,
@@ -418,6 +447,7 @@
 				A5BE0B642172B3CE00186357 /* LaunchScreen.storyboard in Resources */,
 				A5D4EA3F2210FD730085BBAA /* trainView_url.url in Resources */,
 				A5F6CDAD2172BAA100CA9AFD /* RRSchedules.json in Resources */,
+				A53B3B11221DB04000D63C4E /* arrivalsElkins.json in Resources */,
 				A5B29F182219FE24000D56B3 /* sample.json in Resources */,
 				A5D4EA432211A4E70085BBAA /* StationArrivalSuburban.json in Resources */,
 				A5BE0B612172B3CE00186357 /* Assets.xcassets in Resources */,
@@ -428,6 +458,9 @@
 				A5EECC4222120676006C4C79 /* StationArrive.json in Resources */,
 				A5F6CD992172BA5700CA9AFD /* stations.csv in Resources */,
 				A5F6CDB02172BAA100CA9AFD /* trainview.json in Resources */,
+				A53B3B15221DB0B100D63C4E /* trainview2.json in Resources */,
+				A53B3B17221DB10400D63C4E /* trainview3.json in Resources */,
+				A53B3B13221DB09300D63C4E /* trainview1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,9 +514,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53B3B19221DD48100D63C4E /* NetworkRefresh.swift in Sources */,
 				A5F6CDA32172BA6300CA9AFD /* TrainView.swift in Sources */,
 				A5BE0B5C2172B3CD00186357 /* ViewController.swift in Sources */,
 				A5D4EA412211A1DC0085BBAA /* StationArrival.swift in Sources */,
+				A53B3B0C221CA8D600D63C4E /* TrainViewReport.swift in Sources */,
 				A5DEDA0321738B760003B98E /* ViewTimes.swift in Sources */,
 				A5F6CDA02172BA6300CA9AFD /* Sparse.swift in Sources */,
 				A5F6CDA22172BA6300CA9AFD /* StationToStation.swift in Sources */,
@@ -511,6 +546,7 @@
 				A5B29F162219FBA3000D56B3 /* NetworkTests.swift in Sources */,
 				A599E3B9221B55EF008F7A4F /* TimeAdjustTests.swift in Sources */,
 				A5BE0B6F2172B3CE00186357 /* SeptaJSONTests.swift in Sources */,
+				A53B3B0E221CA92200D63C4E /* TrainViewReportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
