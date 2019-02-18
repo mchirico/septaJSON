@@ -11,6 +11,9 @@
 		A58D74B221738F6300EFFE59 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74B121738F6300EFFE59 /* TableViewCell1.swift */; };
 		A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */; };
 		A598ACF521AFFCEC00EDBA07 /* bgViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */; };
+		A599E3B5221B36D6008F7A4F /* SeptaJSONTrainViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599E3B3221B36A3008F7A4F /* SeptaJSONTrainViewV2.swift */; };
+		A599E3B7221B51B3008F7A4F /* RecTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599E3B6221B51B3008F7A4F /* RecTimerTests.swift */; };
+		A599E3B9221B55EF008F7A4F /* TimeAdjustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599E3B8221B55EF008F7A4F /* TimeAdjustTests.swift */; };
 		A5B29F0E2219D236000D56B3 /* ViewCtrFromSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */; };
 		A5B29F122219FAD3000D56B3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F112219FAD2000D56B3 /* Network.swift */; };
 		A5B29F162219FBA3000D56B3 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F152219FBA3000D56B3 /* NetworkTests.swift */; };
@@ -78,6 +81,9 @@
 		A598ACF221AFFCEC00EDBA07 /* bgViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bgViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bgViewTests.swift; sourceTree = "<group>"; };
 		A598ACF621AFFCEC00EDBA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A599E3B3221B36A3008F7A4F /* SeptaJSONTrainViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeptaJSONTrainViewV2.swift; sourceTree = "<group>"; };
+		A599E3B6221B51B3008F7A4F /* RecTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecTimerTests.swift; sourceTree = "<group>"; };
+		A599E3B8221B55EF008F7A4F /* TimeAdjustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdjustTests.swift; sourceTree = "<group>"; };
 		A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCtrFromSelect.swift; sourceTree = "<group>"; };
 		A5B29F112219FAD2000D56B3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A5B29F152219FBA3000D56B3 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
@@ -215,7 +221,10 @@
 		A5BE0B6D2172B3CE00186357 /* SeptaJSONTests */ = {
 			isa = PBXGroup;
 			children = (
+				A599E3B6221B51B3008F7A4F /* RecTimerTests.swift */,
+				A599E3B8221B55EF008F7A4F /* TimeAdjustTests.swift */,
 				A5BE0B6E2172B3CE00186357 /* SeptaJSONTests.swift */,
+				A599E3B3221B36A3008F7A4F /* SeptaJSONTrainViewV2.swift */,
 				A5BE0B702172B3CE00186357 /* Info.plist */,
 				A5B29F152219FBA3000D56B3 /* NetworkTests.swift */,
 			);
@@ -497,7 +506,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A599E3B7221B51B3008F7A4F /* RecTimerTests.swift in Sources */,
+				A599E3B5221B36D6008F7A4F /* SeptaJSONTrainViewV2.swift in Sources */,
 				A5B29F162219FBA3000D56B3 /* NetworkTests.swift in Sources */,
+				A599E3B9221B55EF008F7A4F /* TimeAdjustTests.swift in Sources */,
 				A5BE0B6F2172B3CE00186357 /* SeptaJSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

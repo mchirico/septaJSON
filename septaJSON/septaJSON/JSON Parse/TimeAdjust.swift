@@ -31,7 +31,7 @@ class TimeAdjust {
     let UTCDate = dateFormatter.date(from: UTCDateString)
     
     dateFormatter.dateFormat = "yyyy-MMM-dd hh:mm:ssa" // Output Format
-    dateFormatter.timeZone = TimeZone.current
+    dateFormatter.timeZone = NSTimeZone(name: "America/New_York")! as TimeZone
     let UTCToCurrentFormat = dateFormatter.string(from: UTCDate!)
     return UTCToCurrentFormat
   }
@@ -39,7 +39,7 @@ class TimeAdjust {
   func LocalToUTC(dateString: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ssa" //Input Format
-    dateFormatter.timeZone = TimeZone.current
+    dateFormatter.timeZone = NSTimeZone(name: "America/New_York")! as TimeZone
     let localDate = dateFormatter.date(from: dateString)
     
     dateFormatter.dateFormat = "yyyy-MMM-dd hh:mm:ssa" // Output Format
