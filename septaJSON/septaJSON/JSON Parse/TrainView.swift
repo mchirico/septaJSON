@@ -38,6 +38,64 @@ class TrainView: SeptaJSON {
   
   var urlResults: String = ""
   var records: TV?
+  var lastGotRequest: Date?
+  var lastRequestStatus = 0
+  var networkManager = NetworkManager()
+  var session: NetworkSession = URLSession.shared
+  
+  var refreshURL = "https://www3.septa.org/hackathon/TrainView/"
+  
+  func refresh( completionHandler: @escaping(TV?) -> Void) {
+
+    let url = URL(string: refreshURL)!
+    
+    networkManager.loadData(from: url) { result in
+      switch result {
+      case .success(let data):
+        self.urlResults = String(data: data, encoding: .utf8) ?? ""
+        if self.urlResults != "" {
+          self.lastGotRequest = Date()
+          self.lastRequestStatus = 1
+          self.parseString(data: self.urlResults)
+
+        } else {
+          self.lastRequestStatus = 0
+        }
+        
+      case .failure:
+        self.lastRequestStatus = -1
+        print("❌ Error TrainView (networkManager): ")
+      }
+      
+      completionHandler(self.records)
+    }
+  }
+  
+  func networkManager(url: String,
+                      session: NetworkSession = URLSession.shared) {
+    
+    let network = NetworkManager(session: session)
+    let url = URL(string: url)!
+    
+    network.loadData(from: url) { result in
+      switch result {
+      case .success(let data):
+        self.urlResults = String(data: data, encoding: .utf8) ?? ""
+        if self.urlResults != "" {
+          self.lastGotRequest = Date()
+          self.lastRequestStatus = 1
+          self.parseString(data: self.urlResults)
+        } else {
+           self.lastRequestStatus = 0
+        }
+
+      case .failure:
+        self.lastRequestStatus = -1
+        print("❌ Error TrainView (networkManager): ")
+      }
+
+    }
+  }
   
   func getURL(url: String) {
     let r = Request()

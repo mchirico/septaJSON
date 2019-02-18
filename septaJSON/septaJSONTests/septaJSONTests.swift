@@ -347,11 +347,9 @@ Did a new station get added?
         print("train_id: \(String(describing: train.track))")
       }
     }
-    
   }
   
   func testStationArriveWithFixture() {
-    
     if let url = Bundle.main.url(forResource: "StationArrive", withExtension: "json") {
       
       do {
@@ -370,5 +368,4 @@ Did a new station get added?
       }
     }
   }
-
 }
