@@ -23,9 +23,8 @@ class SeptaJSONTrainViewV2: XCTestCase {
   func testTrainViewReport() {
     
     let trainViewReport = TrainViewReport()
-    
+
     let stationArrival = StationArrival()
-    
     let session0 = NetworkSessionFixtureMock(forResource: "arrivalsElkins",
                                              withExtension: "json")
     let trainView = TrainView()

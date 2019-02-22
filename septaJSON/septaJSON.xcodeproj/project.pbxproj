@@ -16,11 +16,18 @@
 		A53B3B19221DD48100D63C4E /* NetworkRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B3B18221DD48100D63C4E /* NetworkRefresh.swift */; };
 		A58D74B021738F5C00EFFE59 /* TableViewCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74AF21738F5C00EFFE59 /* TableViewCell0.swift */; };
 		A58D74B221738F6300EFFE59 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58D74B121738F6300EFFE59 /* TableViewCell1.swift */; };
+		A5900A652222C46A00C33F67 /* CellSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5900A642222C46A00C33F67 /* CellSupport.swift */; };
+		A5900A672222D2D200C33F67 /* CellSupportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5900A662222D2D200C33F67 /* CellSupportTest.swift */; };
+		A5900A6B2223004400C33F67 /* TrainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5900A6A2223004400C33F67 /* TrainViewTests.swift */; };
+		A5900A6D222307FC00C33F67 /* TVWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5900A6C222307FC00C33F67 /* TVWorker.swift */; };
+		A5900A6F222321CF00C33F67 /* ExecTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5900A6E222321CF00C33F67 /* ExecTimer.swift */; };
+		A5900A7122234E3600C33F67 /* TVWorkerTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5900A7022234E3600C33F67 /* TVWorkerTimerTests.swift */; };
 		A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */; };
 		A598ACF521AFFCEC00EDBA07 /* bgViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */; };
 		A599E3B5221B36D6008F7A4F /* SeptaJSONTrainViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599E3B3221B36A3008F7A4F /* SeptaJSONTrainViewV2.swift */; };
 		A599E3B7221B51B3008F7A4F /* RecTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599E3B6221B51B3008F7A4F /* RecTimerTests.swift */; };
 		A599E3B9221B55EF008F7A4F /* TimeAdjustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599E3B8221B55EF008F7A4F /* TimeAdjustTests.swift */; };
+		A5AEE4DB2221BC8B0032716E /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AEE4DA2221BC8B0032716E /* Travel.swift */; };
 		A5B29F0E2219D236000D56B3 /* ViewCtrFromSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */; };
 		A5B29F122219FAD3000D56B3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F112219FAD2000D56B3 /* Network.swift */; };
 		A5B29F162219FBA3000D56B3 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B29F152219FBA3000D56B3 /* NetworkTests.swift */; };
@@ -91,6 +98,12 @@
 		A53B3B18221DD48100D63C4E /* NetworkRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRefresh.swift; sourceTree = "<group>"; };
 		A58D74AF21738F5C00EFFE59 /* TableViewCell0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell0.swift; sourceTree = "<group>"; };
 		A58D74B121738F6300EFFE59 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
+		A5900A642222C46A00C33F67 /* CellSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSupport.swift; sourceTree = "<group>"; };
+		A5900A662222D2D200C33F67 /* CellSupportTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSupportTest.swift; sourceTree = "<group>"; };
+		A5900A6A2223004400C33F67 /* TrainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewTests.swift; sourceTree = "<group>"; };
+		A5900A6C222307FC00C33F67 /* TVWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVWorker.swift; sourceTree = "<group>"; };
+		A5900A6E222321CF00C33F67 /* ExecTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecTimer.swift; sourceTree = "<group>"; };
+		A5900A7022234E3600C33F67 /* TVWorkerTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVWorkerTimerTests.swift; sourceTree = "<group>"; };
 		A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgViewFactory.swift; sourceTree = "<group>"; };
 		A598ACF221AFFCEC00EDBA07 /* bgViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bgViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A598ACF421AFFCEC00EDBA07 /* bgViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bgViewTests.swift; sourceTree = "<group>"; };
@@ -98,6 +111,7 @@
 		A599E3B3221B36A3008F7A4F /* SeptaJSONTrainViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeptaJSONTrainViewV2.swift; sourceTree = "<group>"; };
 		A599E3B6221B51B3008F7A4F /* RecTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecTimerTests.swift; sourceTree = "<group>"; };
 		A599E3B8221B55EF008F7A4F /* TimeAdjustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdjustTests.swift; sourceTree = "<group>"; };
+		A5AEE4DA2221BC8B0032716E /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCtrFromSelect.swift; sourceTree = "<group>"; };
 		A5B29F112219FAD2000D56B3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A5B29F152219FBA3000D56B3 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
@@ -236,6 +250,9 @@
 				A5BE0B592172B3CD00186357 /* AppDelegate.swift */,
 				A5B29F0D2219D236000D56B3 /* ViewCtrFromSelect.swift */,
 				A5BE0B5B2172B3CD00186357 /* ViewController.swift */,
+				A5900A642222C46A00C33F67 /* CellSupport.swift */,
+				A5900A6E222321CF00C33F67 /* ExecTimer.swift */,
+				A5900A6C222307FC00C33F67 /* TVWorker.swift */,
 				A5BE0B5D2172B3CD00186357 /* Main.storyboard */,
 				A5BE0B602172B3CE00186357 /* Assets.xcassets */,
 				A5BE0B622172B3CE00186357 /* LaunchScreen.storyboard */,
@@ -255,6 +272,9 @@
 				A5BE0B702172B3CE00186357 /* Info.plist */,
 				A5B29F152219FBA3000D56B3 /* NetworkTests.swift */,
 				A53B3B0D221CA92200D63C4E /* TrainViewReportTests.swift */,
+				A5900A662222D2D200C33F67 /* CellSupportTest.swift */,
+				A5900A6A2223004400C33F67 /* TrainViewTests.swift */,
+				A5900A7022234E3600C33F67 /* TVWorkerTimerTests.swift */,
 			);
 			path = SeptaJSONTests;
 			sourceTree = "<group>";
@@ -279,6 +299,7 @@
 				A5E075752174136200052FA6 /* RecTimer.swift */,
 				A5F6CD9C2172BA6300CA9AFD /* StationToStation.swift */,
 				A5F6CD9D2172BA6300CA9AFD /* TrainView.swift */,
+				A5AEE4DA2221BC8B0032716E /* Travel.swift */,
 				A53B3B0B221CA8D600D63C4E /* TrainViewReport.swift */,
 				A5F6CD982172BA5700CA9AFD /* stations.csv */,
 				A598ACEC21AF4A6800EDBA07 /* BgViewFactory.swift */,
@@ -514,12 +535,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AEE4DB2221BC8B0032716E /* Travel.swift in Sources */,
 				A53B3B19221DD48100D63C4E /* NetworkRefresh.swift in Sources */,
 				A5F6CDA32172BA6300CA9AFD /* TrainView.swift in Sources */,
 				A5BE0B5C2172B3CD00186357 /* ViewController.swift in Sources */,
 				A5D4EA412211A1DC0085BBAA /* StationArrival.swift in Sources */,
 				A53B3B0C221CA8D600D63C4E /* TrainViewReport.swift in Sources */,
 				A5DEDA0321738B760003B98E /* ViewTimes.swift in Sources */,
+				A5900A652222C46A00C33F67 /* CellSupport.swift in Sources */,
 				A5F6CDA02172BA6300CA9AFD /* Sparse.swift in Sources */,
 				A5F6CDA22172BA6300CA9AFD /* StationToStation.swift in Sources */,
 				A58D74B221738F6300EFFE59 /* TableViewCell1.swift in Sources */,
@@ -528,10 +551,12 @@
 				A5F6CD962172B98600CA9AFD /* Request.swift in Sources */,
 				A5F6CDA42172BA6300CA9AFD /* ReadStations.swift in Sources */,
 				A5E075762174136200052FA6 /* RecTimer.swift in Sources */,
+				A5900A6F222321CF00C33F67 /* ExecTimer.swift in Sources */,
 				A5BE0B5A2172B3CD00186357 /* AppDelegate.swift in Sources */,
 				A5F6CDA52172BA6300CA9AFD /* RRSchedules.swift in Sources */,
 				A5B29F122219FAD3000D56B3 /* Network.swift in Sources */,
 				A5DEDA0121735B630003B98E /* TimeAdjust.swift in Sources */,
+				A5900A6D222307FC00C33F67 /* TVWorker.swift in Sources */,
 				A598ACED21AF4A6800EDBA07 /* BgViewFactory.swift in Sources */,
 				A5B29F0E2219D236000D56B3 /* ViewCtrFromSelect.swift in Sources */,
 			);
@@ -542,7 +567,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A599E3B7221B51B3008F7A4F /* RecTimerTests.swift in Sources */,
+				A5900A6B2223004400C33F67 /* TrainViewTests.swift in Sources */,
 				A599E3B5221B36D6008F7A4F /* SeptaJSONTrainViewV2.swift in Sources */,
+				A5900A7122234E3600C33F67 /* TVWorkerTimerTests.swift in Sources */,
+				A5900A672222D2D200C33F67 /* CellSupportTest.swift in Sources */,
 				A5B29F162219FBA3000D56B3 /* NetworkTests.swift in Sources */,
 				A599E3B9221B55EF008F7A4F /* TimeAdjustTests.swift in Sources */,
 				A5BE0B6F2172B3CE00186357 /* SeptaJSONTests.swift in Sources */,
