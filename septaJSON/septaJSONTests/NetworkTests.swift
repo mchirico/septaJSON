@@ -60,8 +60,8 @@ class NetworkTests: XCTestCase {
   func testTimeout() {
     // This should timeout
     let sessionConfig = URLSessionConfiguration.default
-    sessionConfig.timeoutIntervalForRequest = 0.1
-    sessionConfig.timeoutIntervalForResource = 0.1
+    sessionConfig.timeoutIntervalForRequest = 0.01
+    sessionConfig.timeoutIntervalForResource = 0.01
     
     let session = URLSession.init(configuration: sessionConfig)
     let network = NetworkManager(session: session)
