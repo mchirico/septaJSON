@@ -18,31 +18,6 @@ class TrainViewReportTests: XCTestCase {
     override func tearDown() {
     }
   
-//  func testTrainViewReport() {
-//    
-//    let trainViewReport = TrainViewReport()
-//
-//    let session = NetworkSessionFixtureMock(forResource: "trainview",
-//                                            withExtension: "json")
-//    
-//    trainViewReport.trainView.session = session
-//    trainViewReport.trainView.networkManager = NetworkManager(session: session)
-//    
-//    let expected = "Elkins Park"
-//    let expectedTrain = "500"
-//    
-//    trainViewReport.refresh(trainno: "500") { result in
-//      print("\(String(describing: result?.trainno))")
-//      
-//      XCTAssert( result?.nextstop == expected, "Failed ")
-//      XCTAssert( result?.trainno == expectedTrain, "Failed ")
-//      
-//      self.expectation.fulfill()
-//    }
-//    wait(for: [expectation], timeout: 10)
-//    
-//  }
-
     func testExample() {
     }
 

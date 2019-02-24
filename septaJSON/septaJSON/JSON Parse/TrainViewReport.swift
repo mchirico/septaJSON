@@ -9,10 +9,7 @@
 import Foundation
 
 class TrainViewReport {
-  
-  let stationArrival = StationArrival()
-  let trainView = TrainView()
-  
+
   var refreshStation: NetworkRefresh<StationArrival.SA>?
   var refreshTrainView: NetworkRefresh<TrainView.TV>?
   
@@ -32,18 +29,3 @@ class TrainViewReport {
   }
 }
 }
-
-//  func refresh(trainno: String, completionHandler: @escaping(TrainView.Trains?) -> Void) {
-//    
-//    trainView.refresh { result in
-//      var train: TrainView.Trains?
-//      
-//      result?.tv.forEach {
-//        if $0.trainno == trainno {
-//          train = $0
-//        }
-//      }
-//     completionHandler(train)
-//
-//    }
-//  }

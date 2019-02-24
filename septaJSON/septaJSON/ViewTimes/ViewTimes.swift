@@ -25,18 +25,23 @@ class ViewTimes: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    
   }
   
   override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
     stopTimer()
   }
   
   override func viewWillAppear(_ animated: Bool) {
+     super.viewWillAppear(animated)
+    
     delegates()
     DispatchQueue.main.async { [weak self] in
       self?.refreshData()
       self?.startTimer()
     }
+    
   }
   
   func delegates() {
