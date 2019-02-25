@@ -33,7 +33,7 @@ class CellSupportTest: XCTestCase {
     
     XCTAssert(cellSupport.cellBounds.width == 10, "Expected 10")
     
-    let resultV = cellSupport.fill(row: 0)
+    let resultV = cellSupport.fill(row: 0, text: "stuff")
     
     let result = cellSupport.bgVF.labelContainer0[0].text
     

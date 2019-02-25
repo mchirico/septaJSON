@@ -20,7 +20,7 @@ class ViewTimes: UIViewController {
   
   var timer: Timer!
   
-  let bgVF = BgViewFactory(number: 30)
+  let bgVF = BgViewFactory(number: 70)
   
   override func viewDidLoad() {
     super.viewDidLoad()
