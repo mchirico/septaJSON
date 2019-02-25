@@ -9,16 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+  var execTimer: ExecTimer!
+  var tvWorker =  TVWorker()
   
-  let stuff = ["one", "two", "three"]
-  
-  let cellSupport = CellSupport(number: 30)
+  let cellSupport = CellSupport(number: 70)
   
   @IBOutlet weak var tableView0: UITableView!
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     delegates()
+    execTimer = ExecTimer(execForTimer: tvWorker, view: self)
+    
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    execTimer.startTimer()
+    
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+  }
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    execTimer.stopTimer()
   }
   
   func delegates() {
@@ -28,31 +45,65 @@ class ViewController: UIViewController {
   
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ViewController: UITableViewDelegate,
+UITableViewDataSource, ExecInView {
+  
+  func viewExec() {
+    //print("\n ** HERE **\n")
     
-    if tableView == tableView0 {
+    DispatchQueue.main.async { [unowned self] in
       
-      return stuff.count
+      if self.execTimer.count != self.tableView0.numberOfRows(inSection: 0) {
+        self.tableView0.reloadData()
+      } else {
+        for i in 0..<self.execTimer.count {
+          let indexPath = IndexPath(row: i, section: 0)
+          self.tableView0.reloadRows(at: [indexPath], with: .left)
+        }
+      }
+      
     }
-    return 0
+    
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return execTimer.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     if tableView == tableView0 {
-      
+
       if let cell = tableView.dequeueReusableCell(withIdentifier: "cell0") {
         
         cellSupport.setCellBounds(bounds: cell.bounds)
         cellSupport.setViewBounds(bounds: view.bounds)
         
-        cell.addSubview(cellSupport.fill(row: indexPath.row))
+         if let records = execTimer.records {
+          var lateString = " ✅"
+          
+          let trainno = records.tv[indexPath.row].trainno
+          let late = records.tv[indexPath.row].late
+          if late != 0 {
+            lateString = "\(late)"
+          }
+          if late >= 6 {
+            lateString = "❌ \(late)"
+          }
+          let line = records.tv[indexPath.row].line
+          let next = records.tv[indexPath.row].nextstop
+          
+          let data = "\(trainno):\t \(lateString)\t \(line)\t -->\(next)\nhere"
+           DispatchQueue.main.async { [unowned self] in
+            cell.addSubview(self.cellSupport.fill(row: indexPath.row, text: data))
+          }
+          
+        }
         
         return cell
       }
     }
-      return tableView.dequeueReusableCell(withIdentifier: "cell0")!
-    }
+    return tableView.dequeueReusableCell(withIdentifier: "cell0")!
+  }
   
 }

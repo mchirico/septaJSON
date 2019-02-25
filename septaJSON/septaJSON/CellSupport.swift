@@ -30,37 +30,49 @@ class CellSupport {
   }
   
   func fill(
-            row: Int) -> UIView {
+    row: Int, text: String) -> UIView {
     
     bgVF.bgContainer0[row].frame = CGRect(x: 2, y: 0, width: cellBounds.width - 4, height: (cellBounds.height)-2)
     
-    bgVF.bgContainer0[row].backgroundColor = UIColor.gray
+    bgVF.bgContainer0[row].backgroundColor = UIColor(red: 0.9,
+                                                     green: 0.9,
+                                                     blue: 0.9,
+                                                     alpha: 1)
+
     bgVF.bgContainer0[row].layer.borderWidth = 3
     bgVF.bgContainer0[row].alpha = 1
     bgVF.bgContainer0[row].layer.cornerRadius = 9
     bgVF.bgContainer0[row].tag = 100
     
+    // For Animation
     bgVF.bgContainer0[row].center.x -=  viewBounds.width
     
-    bgVF.labelContainer0[row].frame = CGRect(x: 35,
-                                                       y: 12,
-                                                       width: 297,
-                                                       height: 15)
+    bgVF.labelContainer0[row].frame = CGRect(x: 15,
+                                             y: 1,
+                                             width: 365,
+                                             height: 45)
     
     bgVF.labelContainer0[row].textAlignment = NSTextAlignment.left
-    
+    bgVF.labelContainer0[row].lineBreakMode = .byWordWrapping
+    bgVF.labelContainer0[row].numberOfLines = 2
+
     bgVF.labelContainer0[row].textColor = UIColor.black
-    bgVF.labelContainer0[row].backgroundColor = UIColor.clear
-    bgVF.labelContainer0[row].alpha = 10
+    bgVF.labelContainer0[row].backgroundColor = UIColor(red: 0.9,
+                                                        green: 0.9,
+                                                        blue: 0.9,
+                                                        alpha: 1)
     
-    bgVF.labelContainer0[row].text = "stuff"
+    //bgVF.labelContainer0[row].alpha = 1
+    bgVF.labelContainer0[row].text = text
+    bgVF.labelContainer0[row].font  = UIFont(name: "Avenir", size: 12.0)
     
+    // For Animation
     UIView.animate(withDuration: 0.5) {
       self.bgVF.bgContainer0[row].center.x += self.viewBounds.width
     }
     
     return bgVF.bgContainer0[row]
-
+    
   }
   
   open func exec() {

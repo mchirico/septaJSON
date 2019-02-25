@@ -18,13 +18,23 @@ class TVWorkerTimerTests: XCTestCase {
   
   override func tearDown() {
   }
-   
+  
+  class MockView: ExecInView {
+    var status = false
+    func viewExec() {
+      self.status = true
+    }
+  }
+  
   func testTimer() {
     let session = NetworkSessionFixtureMock(forResource: "trainview1",
                                             withExtension: "json")
     
     let tvWorker = TVWorker(session: session)
-    let execTimer = ExecTimer(execForTimer: tvWorker)
+    
+    let mockView = MockView()
+    
+    let execTimer = ExecTimer(execForTimer: tvWorker, view: mockView)
     
     execTimer.startTimer()
     sleep(10)
@@ -32,6 +42,7 @@ class TVWorkerTimerTests: XCTestCase {
     
     if let records = execTimer.records {
       XCTAssert(records.tv[0].trainno == "222", "Should be 222")
+      XCTAssert(mockView.status == true, "Should have called this")
     } else {
       XCTFail()
     }
