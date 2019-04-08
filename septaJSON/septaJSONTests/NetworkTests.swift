@@ -41,7 +41,7 @@ class NetworkTests: XCTestCase {
     let session = NetworkSessionMock()
     let network = NetworkManager(session: session)
     
-    let mockData = Data(bytes: [0, 1, 0, 1])
+    let mockData = Data(_: [0, 1, 0, 1])
     session.data = mockData
     
     let url = URL(string: "blank")!

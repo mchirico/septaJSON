@@ -3,7 +3,7 @@ sudo: false
 matrix:
   include:
   - language: objective-c
-    osx_image: xcode10.1
+    osx_image: xcode10.2
     before_install:
     - date
     - export TZ=America/New_York
@@ -12,8 +12,8 @@ matrix:
     - echo ${TZ}
     script:
     - cd SeptaJSON
-    - xcodebuild clean build -project SeptaJSON.xcodeproj -scheme SeptaJSON CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone X,OS=12.1' -quiet
-    - xcodebuild test -project SeptaJSON.xcodeproj -scheme SeptaJSON -destination 'platform=iOS Simulator,name=iPhone X,OS=12.1'  -enableCodeCoverage  YES -quiet
+    - xcodebuild clean build -project SeptaJSON.xcodeproj -scheme SeptaJSON CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone X,OS=12.2' -quiet
+    - xcodebuild test -project SeptaJSON.xcodeproj -scheme SeptaJSON -destination 'platform=iOS Simulator,name=iPhone X,OS=12.2'  -enableCodeCoverage  YES -quiet
     after_success:
     - bash <(curl -s https://codecov.io/bash)
     
